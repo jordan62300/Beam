@@ -1,0 +1,21 @@
+{
+    "name": "jorda/projet-beam",
+    "authors": [
+        {
+            "name": "jordan62300",
+            "email": "jordanfievetpro@outlook.fr"
+        }
+    ],
+    "autoload": {
+        "psr-4": {
+            "": "src",
+           "BDD\\":"models/BDD",
+           "Manga\\":"src/Mangas",
+           "Form\\": "src/Form",
+           "Access\\":"src/Access",
+           "UserAppBDD\\":"models/UserAppBDD"
+        }
+    },
+    "require": {}
+}
+   
