@@ -8,10 +8,7 @@ $conn = new Manga();
 
 $conn->connexion();
 
-    if(isset($_GET['delete'])){
-        $conn->onDelete($_GET['delete']);
-        echo "done";
-    }
+    
 
     if(isset($_SESSION['id'])){
     var_dump($_SESSION['id']); 

@@ -48,6 +48,8 @@ public function displaySingleManga($id){
   echo "
   <div class='items'>
    <a href='index.php?content=manga&mangaId=".$manga['id']."'> <img class='img' src='images/".$manga['imgnom']."' /> </a>
+   <a href='index.php?content=manga&mangaId=".$manga['id']."&action=like'> Likes </a>
+   <a href='index.php?content=manga&mangaId=".$manga['id']."&action=dislike'> Disikes </a>
   </div>
  " ;
 }

@@ -3,13 +3,26 @@
 include('utils.php');
 
 use Mangas\Manga;
+use Mangas\Like;
+use Mangas\Dislike;
 
-$conn = new Manga();
+$mangas = new Manga();
+$likes = new Like();
+$dislike = new Dislike();
 
-$conn->connexion();
+$mangas->connexion();
 
-$manga = $conn->getMangaById($_GET['mangaId']);
+if(isset($_SESSION['id'])){
+    var_dump($_SESSION['id']); 
+    }
 
+$manga = $mangas->getMangaById($_GET['mangaId']);
+
+if(isset($_GET['action']) && $_GET['action'] == 'like') {
+    $likes->checkHasLikedOnce($_GET['mangaId'] , $_SESSION['id']);
+} else if(isset($_GET['action']) && $_GET['action'] == 'dislike') {
+    $dislike->checkHasDislikedOnce($_GET['mangaId'] , $_SESSION['id']);
+}
 
 
 ?>
@@ -21,4 +34,4 @@ $manga = $conn->getMangaById($_GET['mangaId']);
     <h1 class="title"><?= $manga['imgnom']?></h1>
     <div class="container">
         <div class="content-items">
-        <?= $conn->displaySingleManga($_GET['mangaId']); ?>
+        <?= $mangas->displaySingleManga($_GET['mangaId']); ?>
