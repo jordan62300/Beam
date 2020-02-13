@@ -6,16 +6,20 @@ $vendorDir = dirname(dirname(__FILE__));
 $baseDir = dirname($vendorDir);
 
 return array(
+    'Access\\Connexion' => $baseDir . '/src/Access/Connexion.php',
     'Access\\Deconnexion' => $baseDir . '/src/Access/Deconnexion.php',
     'Access\\Inscription' => $baseDir . '/src/Access/Inscription.php',
     'BDD\\Connexion_BDD' => $baseDir . '/models/BDD/Connexion_BDD.php',
-    'BDD\\MangaManager' => $baseDir . '/models/BDD/MangaManager.php',
     'Form\\Form' => $baseDir . '/src/Form/Form.php',
     'Form\\FormInscription' => $baseDir . '/src/Form/FormInscription.php',
     'Form\\FormLogin' => $baseDir . '/src/Form/FormLogin.php',
     'Form\\FormManga' => $baseDir . '/src/Form/FormManga.php',
+    'MangaManager\\MangaManager' => $baseDir . '/models/Manga/MangaManager.php',
+    'Mangas\\Dislike' => $baseDir . '/src/Mangas/Dislike.php',
+    'Mangas\\Like' => $baseDir . '/src/Mangas/Like.php',
     'Mangas\\Manga' => $baseDir . '/src/Mangas/Manga.php',
     'UserAppBDD\\ConnexionManager' => $baseDir . '/models/UserAppBDD/ConnexionManager.php',
     'UserAppBDD\\InscriptionManager' => $baseDir . '/models/UserAppBDD/InscriptionManager.php',
-    'User\\Connexion' => $baseDir . '/src/Access/Connexion.php',
+    'Vote\\DislikeManager' => $baseDir . '/models/Vote/DislikeManager.php',
+    'Vote\\LikeManager' => $baseDir . '/models/Vote/LikeManager.php',
 );

@@ -6,10 +6,12 @@ $vendorDir = dirname(dirname(__FILE__));
 $baseDir = dirname($vendorDir);
 
 return array(
-    'User\\' => array($baseDir . '/src/Access'),
+    'Vote\\' => array($baseDir . '/models/Vote'),
     'UserAppBDD\\' => array($baseDir . '/models/UserAppBDD'),
     'Manga\\' => array($baseDir . '/src/Mangas'),
+    'MangaManager\\' => array($baseDir . '/models/Manga'),
     'Form\\' => array($baseDir . '/src/Form'),
     'BDD\\' => array($baseDir . '/models/BDD'),
+    'Access\\' => array($baseDir . '/src/Access'),
     '' => array($baseDir . '/src'),
 );

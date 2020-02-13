@@ -17,9 +17,12 @@ session_start();
 
 // CONNECTE
 
-if( isset($_GET['form'])  && $_GET['form'] == 'Manga' && isset($_SESSION['id']) && $_SESSION['id'] != null ) {
+if( isset($_GET['action'])  && $_GET['action'] == 'addManga' && isset($_SESSION['id']) && $_SESSION['id'] != null ) {
     require './templates/header/headerconnecter.php';
-    require './templates/form/formulaireimage.php';
+    require './templates/form/formulairemanga.php';
+}  else if(isset($_GET['action']) && $_GET['action'] == 'addTome' && isset($_SESSION['id']) && $_SESSION['id'] != null){
+    require './templates/header/headerconnecter.php';
+    require './templates/form/formulairetome.php';
 } else if(isset($_GET['content']) && $_GET['content'] == "manga" && isset($_SESSION['id']) && $_SESSION['id'] != null ) {
     require './templates/header/headerconnecter.php';
     require './templates/content/singlemanga.php';
@@ -35,7 +38,7 @@ if( isset($_GET['form'])  && $_GET['form'] == 'Manga' && isset($_SESSION['id']) 
 } else if( isset($_SESSION['id']) && $_SESSION['id'] != null  ) {
     require './templates/header/headerconnecter.php';
     require './templates/content/arene.php';
-} 
+}
 
 // Pas CONNECTE
 else if(isset($_GET['content']) && $_GET['content'] == "manga" ) {
@@ -48,7 +51,7 @@ else if(isset($_GET['content']) && $_GET['content'] == "inscription" ) {
 } else if(isset($_GET['content']) && $_GET['content'] == "connexion" ) {
     require './templates/header/header.php';
     require './templates/users/login.php';
-} else if( isset($_GET['form']) && $_GET['form'] == 'Manga' ) {
+} else if( isset($_GET['action']) && $_GET['action'] == 'addManga' ) {
     require './templates/header/header.php';
     require './templates/users/login.php';
 } else {

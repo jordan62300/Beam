@@ -2,7 +2,7 @@
 
 namespace Mangas;
 
-use BDD\LikeManager;
+use Vote\LikeManager;
 
 class Like extends LikeManager {
 

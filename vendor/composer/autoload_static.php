@@ -7,14 +7,18 @@ namespace Composer\Autoload;
 class ComposerStaticInit1af6281b4936e0e0c10e92a090a27d15
 {
     public static $prefixLengthsPsr4 = array (
+        'V' => 
+        array (
+            'Vote\\' => 5,
+        ),
         'U' => 
         array (
-            'User\\' => 5,
             'UserAppBDD\\' => 11,
         ),
         'M' => 
         array (
             'Manga\\' => 6,
+            'MangaManager\\' => 13,
         ),
         'F' => 
         array (
@@ -24,12 +28,16 @@ class ComposerStaticInit1af6281b4936e0e0c10e92a090a27d15
         array (
             'BDD\\' => 4,
         ),
+        'A' => 
+        array (
+            'Access\\' => 7,
+        ),
     );
 
     public static $prefixDirsPsr4 = array (
-        'User\\' => 
+        'Vote\\' => 
         array (
-            0 => __DIR__ . '/../..' . '/src/Access',
+            0 => __DIR__ . '/../..' . '/models/Vote',
         ),
         'UserAppBDD\\' => 
         array (
@@ -39,6 +47,10 @@ class ComposerStaticInit1af6281b4936e0e0c10e92a090a27d15
         array (
             0 => __DIR__ . '/../..' . '/src/Mangas',
         ),
+        'MangaManager\\' => 
+        array (
+            0 => __DIR__ . '/../..' . '/models/Manga',
+        ),
         'Form\\' => 
         array (
             0 => __DIR__ . '/../..' . '/src/Form',
@@ -47,6 +59,10 @@ class ComposerStaticInit1af6281b4936e0e0c10e92a090a27d15
         array (
             0 => __DIR__ . '/../..' . '/models/BDD',
         ),
+        'Access\\' => 
+        array (
+            0 => __DIR__ . '/../..' . '/src/Access',
+        ),
     );
 
     public static $fallbackDirsPsr4 = array (
@@ -54,18 +70,22 @@ class ComposerStaticInit1af6281b4936e0e0c10e92a090a27d15
     );
 
     public static $classMap = array (
+        'Access\\Connexion' => __DIR__ . '/../..' . '/src/Access/Connexion.php',
         'Access\\Deconnexion' => __DIR__ . '/../..' . '/src/Access/Deconnexion.php',
         'Access\\Inscription' => __DIR__ . '/../..' . '/src/Access/Inscription.php',
         'BDD\\Connexion_BDD' => __DIR__ . '/../..' . '/models/BDD/Connexion_BDD.php',
-        'BDD\\MangaManager' => __DIR__ . '/../..' . '/models/BDD/MangaManager.php',
         'Form\\Form' => __DIR__ . '/../..' . '/src/Form/Form.php',
         'Form\\FormInscription' => __DIR__ . '/../..' . '/src/Form/FormInscription.php',
         'Form\\FormLogin' => __DIR__ . '/../..' . '/src/Form/FormLogin.php',
         'Form\\FormManga' => __DIR__ . '/../..' . '/src/Form/FormManga.php',
+        'MangaManager\\MangaManager' => __DIR__ . '/../..' . '/models/Manga/MangaManager.php',
+        'Mangas\\Dislike' => __DIR__ . '/../..' . '/src/Mangas/Dislike.php',
+        'Mangas\\Like' => __DIR__ . '/../..' . '/src/Mangas/Like.php',
         'Mangas\\Manga' => __DIR__ . '/../..' . '/src/Mangas/Manga.php',
         'UserAppBDD\\ConnexionManager' => __DIR__ . '/../..' . '/models/UserAppBDD/ConnexionManager.php',
         'UserAppBDD\\InscriptionManager' => __DIR__ . '/../..' . '/models/UserAppBDD/InscriptionManager.php',
-        'User\\Connexion' => __DIR__ . '/../..' . '/src/Access/Connexion.php',
+        'Vote\\DislikeManager' => __DIR__ . '/../..' . '/models/Vote/DislikeManager.php',
+        'Vote\\LikeManager' => __DIR__ . '/../..' . '/models/Vote/LikeManager.php',
     );
 
     public static function getInitializer(ClassLoader $loader)

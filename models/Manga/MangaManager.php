@@ -1,5 +1,5 @@
 <?php
-namespace BDD;
+namespace MangaManager;
 
 use BDD\Connexion_BDD;
 use PDO;

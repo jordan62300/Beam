@@ -12,9 +12,6 @@ $dislike = new Dislike();
 
 $mangas->connexion();
 
-if(isset($_SESSION['id'])){
-    var_dump($_SESSION['id']); 
-    }
 
 $manga = $mangas->getMangaById($_GET['mangaId']);
 
@@ -34,4 +31,16 @@ if(isset($_GET['action']) && $_GET['action'] == 'like') {
     <h1 class="title"><?= $manga['imgnom']?></h1>
     <div class="container">
         <div class="content-items">
-        <?= $mangas->displaySingleManga($_GET['mangaId']); ?>
+        <div class='items'>
+   <a href="index.php?content=manga&mangaId=<?=$manga['id']?>"> <img class='img' src="images/<?=$manga['imgnom']?> "/> </a>
+   <a href="index.php?content=manga&mangaId=<?=$manga['id']?>&action=like"> Likes </a>
+   <a href="index.php?content=manga&mangaId=<?=$manga['id']?>&action=dislike"> Disikes </a>
+   <?php if(isset($_SESSION['id']) && $manga['user_id'] == $_SESSION['id']) {
+       echo "  <a href='index.php?action=addTome&mangaId=".$manga['id']."'> Ajouter un Tome
+";
+   } else {
+      
+   } ?>
+   <a href="index.php?content=tome&mangaId=<?=$manga['id']?>">Acceder aux tomes</a>
+  </div>
+

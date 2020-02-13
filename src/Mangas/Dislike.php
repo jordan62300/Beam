@@ -2,7 +2,7 @@
 
 namespace Mangas;
 
-use BDD\DislikeManager;
+use Vote\DislikeManager;
 
 class Dislike extends DislikeManager {
 

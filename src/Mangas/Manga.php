@@ -2,7 +2,7 @@
 
 namespace Mangas;
 
-use BDD\MangaManager;
+use MangaManager\MangaManager;
 
 class Manga extends MangaManager {
    private $nom;
@@ -52,6 +52,7 @@ public function displaySingleManga($id){
    <a href='index.php?content=manga&mangaId=".$manga['id']."&action=dislike'> Disikes </a>
   </div>
  " ;
+
 }
 
 
@@ -61,7 +62,7 @@ public function displayMangasByUser($userId){
     foreach($mangas as $manga){
         echo "
         <div class='items'>
-         <a href='index.php?content=manga&mangaId=".$manga->id."'> <img class='img' src='images/".$manga->imgnom."' /> </a>
+         <a href='index.php?content=manga&mangaId=".$manga->id."&author=tokenInfo'> <img class='img' src='images/".$manga->imgnom."' /> </a>
         </div>
        " ;
 }

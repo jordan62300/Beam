@@ -13,7 +13,9 @@
            "Manga\\":"src/Mangas",
            "Form\\": "src/Form",
            "Access\\":"src/Access",
-           "UserAppBDD\\":"models/UserAppBDD"
+           "UserAppBDD\\":"models/UserAppBDD",
+           "Vote\\":"models/Vote",
+           "MangaManager\\":"models/Manga"
         }
     },
     "require": {}

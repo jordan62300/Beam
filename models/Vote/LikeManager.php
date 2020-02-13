@@ -1,7 +1,7 @@
 <?php
-namespace BDD;
+namespace Vote;
 
-use BDD\MangaManager;
+use MangaManager\MangaManager;
 use PDO;
 
 class LikeManager extends MangaManager {
