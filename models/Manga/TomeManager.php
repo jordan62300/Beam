@@ -1,10 +1,10 @@
 <?php
 namespace MangaManager;
 
-use MangaManager\MangaManager;
+use BDD\Connexion_BDD;
 use PDO;
 
-class TomeManager extends MangaManager{
+class TomeManager extends Connexion_BDD{
     public function __construct(){
       $this->connexion();
     }
@@ -20,5 +20,17 @@ class TomeManager extends MangaManager{
           $images,
           $manga_id
         ]);
+    }
+
+    public function getTomeByMangaIdInBDD($mangaId){
+      $pdo = $this->getPDO();
+      $req = $pdo->query("SELECT * FROM tomes WHERE manga_id = '$mangaId' ");
+      $res = $req->fetchAll(PDO::FETCH_OBJ);
+      return $res;
+    
+    }
+
+    public function sayhello(){
+      echo'helo';
     }
 }

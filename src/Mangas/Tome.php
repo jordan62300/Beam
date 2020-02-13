@@ -31,7 +31,17 @@ class Tome extends TomeManager {
     }
 }
 
+function dd(...$vars) {
+    foreach($vars as $var) {
+        echo '<pre>';
+        print_r($var);
+        echo '</pre>';
+}
+}
+
 public function getTomeByMangaId(){
     $mangaId = $_GET['mangaId'];
+    $tomes = $this->getTomeByMangaIdInBDD($mangaId);
+    return $tomes;
 }
 }

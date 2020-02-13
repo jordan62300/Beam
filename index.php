@@ -29,6 +29,9 @@ if( isset($_GET['action'])  && $_GET['action'] == 'addManga' && isset($_SESSION[
 } else if(isset($_GET['content']) && $_GET['content'] == 'arene' && isset($_SESSION['id']) && $_SESSION['id'] != null) {
     require './templates/header/headerconnecter.php';
     require './templates/content/arene.php';
+} else if(isset($_GET['content']) && $_GET['content'] == 'tome' && isset($_SESSION['id']) && $_SESSION['id'] != null) {
+    require './templates/header/headerconnecter.php';
+    require './templates/content/tomes.php';
 } else if( isset($_SESSION['id']) && $_SESSION['id'] != null && isset($_GET['content']) && $_GET['content'] == 'deconnexion' ) {
     require './templates/header/headerconnecter.php';
     require './templates/users/deconnexion.php';
@@ -54,6 +57,9 @@ else if(isset($_GET['content']) && $_GET['content'] == "inscription" ) {
 } else if( isset($_GET['action']) && $_GET['action'] == 'addManga' ) {
     require './templates/header/header.php';
     require './templates/users/login.php';
+} else if ( isset($_GET['content']) && $_GET['content'] == 'tome')  {
+    require './templates/header/header.php';
+    require './templates/content/tomes.php';
 } else {
     require './templates/header/header.php';
     require './templates/content/arene.php';
