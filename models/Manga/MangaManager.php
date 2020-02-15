@@ -52,4 +52,11 @@ class MangaManager extends Connexion_BDD{
       $res = $req->fetchall(PDO::FETCH_OBJ);
       return $res;
     } 
+
+    public function getAllMangasClassedByLikes() {
+      $pdo =  $this->getPDO();
+      $req =  $pdo->query("SELECT * FROM mangas ORDER BY likes DESC");
+      $res = $req->fetchAll(PDO::FETCH_OBJ);
+      return $res;
+    }
 }

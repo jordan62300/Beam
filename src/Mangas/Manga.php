@@ -32,7 +32,7 @@ public function addManga($nom,$taille,$imgtype,$imgdescription,$images){
 }
 
 public function displayMangas(){
-    $mangas =  $this->getAllMangas();
+    $mangas =  $this->getAllMangasClassedByLikes();
       foreach($mangas as $manga){
           echo "
           <div class='items'>
