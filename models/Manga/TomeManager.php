@@ -30,7 +30,11 @@ class TomeManager extends Connexion_BDD{
     
     }
 
-    public function sayhello(){
-      echo'helo';
-    }
+    public function getTomeJoinWithMangaIdInBDD($mangaId){
+      $pdo = $this->getPDO();
+      $req = $pdo->query("SELECT * FROM tomes INNER JOIN mangas On tomes.manga_id = mangas.id WHERE tomes.manga_id = '$mangaId' ");
+      $res = $req->fetchAll(PDO::FETCH_OBJ);
+      return $res;
+
+  }
 }

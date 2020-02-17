@@ -2,9 +2,9 @@
 
 namespace Mangas;
 
-use MangaManager\TomeManager;
+use MangaManager\PageManager;
 
-class Tome extends TomeManager {
+class Page extends PageManager {
     private $nom;
     private $taille;
     private $imgtype;
@@ -20,12 +20,12 @@ class Tome extends TomeManager {
      parent::__construct();
  }
 
- public function addTome($nom,$taille,$imgtype,$imgdescription,$images){
-    $mangaId = $_GET['mangaId'];
+ public function addPage($nom,$taille,$imgtype,$imgdescription,$images){
+    $tomeId = $_GET['tomeId'];
     $image =  addslashes($images);
-    $target = "images/Tome/".basename($nom);
+    $target = "images/Page/".basename($nom);
     var_dump($target);
-    $this->addTomeToDatabase($nom,$taille,$imgtype,$imgdescription,$images,$mangaId);
+    $this->addPageToDatabase($nom,$taille,$imgtype,$imgdescription,$images,$tomeId);
     if(move_uploaded_file($images,$target)) {
         echo "yes";
     }
@@ -39,15 +39,9 @@ function dd(...$vars) {
 }
 }
 
-public function getTomeByMangaId(){
-    $mangaId = $_GET['mangaId'];
-    $tomes = $this->getTomeByMangaIdInBDD($mangaId);
-    return $tomes;
-}
-
-public function getTomeJoinByMangaId(){
-    $mangaId = $_GET['mangaId'];
-    $tomes = $this->getTomeJoinWithMangaIdInBDD($mangaId);
-    return $tomes;
+public function getPageByTomeId(){
+    $tomeId = $_GET['tomeId'];
+    $pages = $this->getPageByTomeIdInBDD($tomeId);
+    return $pages;
 }
 }

@@ -5,7 +5,10 @@ use Mangas\Tome;
 
 $tomeInstance = new Tome();
 
+$userId = $tomeInstance->getTomeJoinByMangaId();
 $tomes = $tomeInstance->getTomeByMangaId();
+
+$tomeInstance->dd($userId);
 
 
 
@@ -25,9 +28,9 @@ $tomes = $tomeInstance->getTomeByMangaId();
 
     <?php foreach($tomes as $key=>$tome): ?>
         <div class='items'>
-        <a href="index.php?content=tome&mangaId=<?=$_GET['mangaId']?>&tomeId=<?=$tome->id?>"><img class='img' src='images/<?=$tome->imgnom?>' /></a>
+        <a href="index.php?content=page&mangaId=<?=$_GET['mangaId']?>&tomeId=<?=$tome->id?>"><img class='img' src='images/<?=$tome->imgnom?>' /></a>
         </div>
     <?php endforeach; ?>
-    
+     ?>
 </body>
 </html>
