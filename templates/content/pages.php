@@ -1,3 +1,4 @@
+
 <?php
 include('utils.php');
 
@@ -14,24 +15,18 @@ $pages = $pageInstance->getPageByTomeId();
 
 $number = 0;
 
-$pageInstance->dd($pages);
 if(isset($pages[$number]->imgnom)) {
     echo 'hello';
 } else {
     echo 'goodbye';
 }
 
-
 // var_dump($_POST['incresedNumber']);
 
 if(isset($_POST['incresedNumber'])) {
-
-  
     $number =   $_POST['incresedNumber'];
-var_dump($number);
-        
- 
-
+} else if(isset($_POST['decreasedNumber'])) {
+    $number =   $_POST['decreasedNumber'];
 }
 
 
@@ -46,17 +41,17 @@ var_dump($number);
     <meta http-equiv="X-UA-Compatible" content="ie=edge">
     <link rel="stylesheet" href="templates/styles/arene.css">
     <script src="https://cdnjs.cloudflare.com/ajax/libs/jquery/3.4.1/jquery.js" defer></script>
-    <script src="turn.js" defer></script>
+    <script src="../public/js/turnImage.js" defer></script>
     <title>Document</title>
 </head>
 <body>
     <h1>Page</h1>
 
    
-        <div class='items'>
-        <?php if(isset($pages[$number]->imgnom)): ?>
-        <a href="index.php?content=page&mangaId=<?=$_GET['mangaId']?>&tomeId=<?=$_GET['tomeId']?>"><img class='img' src='images/Page/<?=$pages[$number]->imgnom?>' /></a>
-        <?php endif; ?>
+        <div id=<?=$number?> class='items'>
+        
+<img class='img' src='/images/Page/<?=$pages[$number]->imgnom?>' />
+       
         </div>
         <?php if(isset($_SESSION['id']) && $userId[0]->user_id == $_SESSION['id']) {
        echo "  <a href='index.php?action=addPage&tomeId=".$_GET['tomeId']."'> Ajouter une Page
@@ -65,6 +60,8 @@ var_dump($number);
       
    }
    ?>
+   <button  class="btn-remove">Precedent</button>
+   <button  class="btn-add">Suivant</button>
     
     
 </body>
