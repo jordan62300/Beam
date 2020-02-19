@@ -13,6 +13,7 @@ $userId = $tomeInstance->getTomeJoinByMangaId();
 $pages = $pageInstance->getPageByTomeId();
 
 
+
 $number = 0;
 
 if(isset($pages[$number]->imgnom)) {
@@ -40,8 +41,7 @@ if(isset($_POST['incresedNumber'])) {
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <meta http-equiv="X-UA-Compatible" content="ie=edge">
     <link rel="stylesheet" href="templates/styles/arene.css">
-    <script src="https://cdnjs.cloudflare.com/ajax/libs/jquery/3.4.1/jquery.js" defer></script>
-    <script src="../public/js/turnImage.js" defer></script>
+    
     <title>Document</title>
 </head>
 <body>

@@ -39,7 +39,7 @@ class MangaManager extends Connexion_BDD{
                
     }
 
-    public function getMangaById($id) {
+    public function getMangaByIdInBDD($id) {
       $pdo = $this->getPDO();
       $req = $pdo->query("SELECT * FROM mangas WHERE id = '$id' ");
       $res = $req->fetch();

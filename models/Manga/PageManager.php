@@ -30,4 +30,5 @@ class PageManager extends Connexion_BDD{
     
     }
 
+    
 }

@@ -8,7 +8,7 @@ $formTome = new FormTome();
 if($_SERVER['REQUEST_METHOD'] === 'POST') { 
 
 $description = $_POST['description'];   
-$formTome->onSubmit($_FILES['fic']['name'] ,$_FILES['fic']['size'] ,$_FILES['fic']['type'] ,$description,$_FILES['fic']['tmp_name'] );
+$formTome->onSubmit($_POST['nomManga'],$_FILES['fic']['name'] ,$_FILES['fic']['size'] ,$_FILES['fic']['type'] ,$description,$_FILES['fic']['tmp_name'] );
 }
 
 ?>
@@ -20,6 +20,7 @@ $formTome->onSubmit($_FILES['fic']['name'] ,$_FILES['fic']['size'] ,$_FILES['fic
    <body>
       <h3>Envoi d'une image</h3>
       <form enctype="multipart/form-data" action="#" method="post">
+         <input type="text" name="nomManga">
          <input type="hidden" name="MAX_FILE_SIZE" value="250000" />
          <input type="file" name="fic" size=50 />
          <input type="text" name="description" />

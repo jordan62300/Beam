@@ -7,12 +7,14 @@ const tomeId = params.get('tomeId');
 
 
 $(document).ready(function () {
+
+    // Page suivante du lecteur de manga
      
     $(document).on('click','.btn-add',function (e) {
         e.preventDefault() 
         
         actualNumber = actualNumber + 1; 
-         $.post("index.php?content=page&mangaId="+mangaId+"&tomeId="+tomeId, {
+         $.post("index.php?content=manga&mangaId="+mangaId+"&tomeId="+tomeId, {
              incresedNumber : actualNumber 
              
          },
@@ -23,11 +25,13 @@ $(document).ready(function () {
         
     })
 
+    // Page precedente du lecteur de manga
+
     $(document).on('click','.btn-remove',function (e) {
         e.preventDefault() 
         
         actualNumber = actualNumber - 1; 
-         $.post("index.php?content=page&mangaId="+mangaId+"&tomeId="+tomeId, {
+         $.post("index.php?content=manga&mangaId="+mangaId+"&tomeId="+tomeId, {
              decreasedNumber : actualNumber 
              
          },
@@ -37,4 +41,20 @@ $(document).ready(function () {
          })
         
     })
+
+    $(document).on('change','#chapitre-select',function (e) {
+      var id =   $('#chapitre-select').val();
+        console.log(id)
+        $.post("index.php?content=manga&mangaId="+mangaId+"&tomeId="+id, {
+            tomeSelectedId : id 
+            
+        },
+        function(data, status) {
+            $('html').html(data)
+            console.log(id)
+            window.location = "index.php?content=manga&mangaId="+mangaId+"&tomeId="+id
+        })
+        
+    })
+
 })

@@ -68,6 +68,18 @@ public function displayMangasByUser($userId){
 }
 }
 
+public function addUrlParam($params=array()){
+	$p = array_merge($_GET, $params);
+	$qs = http_build_query($p);
+	return basename($_SERVER['PHP_SELF']).'?'.$qs;
+}
+
+public function getMangaById(){
+  $id = $_GET['mangaId'];
+  $mangas =  $this->getMangaByIdInBDD($id);
+  return $mangas;
+}
+
 
 }
 

@@ -10,13 +10,13 @@ use PDO;
 class FormTome extends Form {
 
     // send the manga to the Database 
-    public function onSubmit($nom,$taille,$type,$description = null,$images) {
+    public function onSubmit($nom,$imgnom,$taille,$type,$description = null,$images) {
 
     
 
-            if(isset($nom) && isset($taille) && isset($type) && isset($description)  && isset($images) ) {
-                      $manga = new Tome($nom,$taille,$type,$description,$images);
-                      $manga->addTome($nom,$taille,$type,$description,$images);
+            if(isset($nom) && isset($imgnom) && isset($taille) && isset($type) && isset($description)  && isset($images) ) {
+                      $manga = new Tome($nom,$imgnom,$taille,$type,$description,$images);
+                      $manga->addTome($nom,$imgnom,$taille,$type,$description,$images);
             
         }
     }    
