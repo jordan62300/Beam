@@ -13,7 +13,7 @@ class Connexion_BDD {
 
 
     // Set the values needed for the connexion
-    public function connexion($db_name="projetBeam",$db_host="localhost",$user='phpmyadmin',$password='f87ac78af'){
+    public function connexion($db_name="projetBeam",$db_host="localhost",$user='',$password=''){
         $this->db_host = $db_host;
         $this->db_name = $db_name;
         $this->user = $user;
