@@ -1,0 +1,77 @@
+
+{% extends headerLayout %}
+
+
+{% block head %}
+<html lang="en">
+<head>
+
+
+{{ parent() }}
+<link rel="stylesheet" href="public/fontawesome/css/all.css">
+<link type="text/css" rel="stylesheet" href="templates/styles/materialize.min.css"  media="screen,projection"/>
+<link rel="stylesheet" href="templates/styles/test.css">
+<script src="https://cdnjs.cloudflare.com/ajax/libs/jquery/3.4.1/jquery.js" defer></script>
+<script type="text/javascript" src="public/js/materialize.min.js" defer></script>
+<script src="../public/js/turnImage.js" defer></script>
+<script src="../public/js/selectform.js" defer></script>
+</head>
+{% endblock %}
+
+{% block nav %}
+<body>
+
+{{ parent() }}
+
+{% endblock %}
+
+
+{% block content %}
+  
+    <div class="header">
+        <img class="img-header" src="dossierAJeter/test.jpg" alt="">
+    </div>
+    
+    <div class="info">
+        <img src="dossierAJeter/profilnaruto.jpg" alt="" class="img-info">
+        <p class="author-info">Masashi Kishimoto</p>
+        <span class="vertical-line"></span>
+        <p class="description-info">Naruto est un jeune ninja du village de Konoha. Hôte du démon renard à neuf queues nommé Kurama ou Kyûbi, une créature qui a attaqué le village par le passé, il est rejeté par les autres villageois. Son ambition est de devenir Hokage, le chef du village,le plus fort de Konoha, afin de gagner le respect des habitants. </p>
+    </div>
+ <div class="select-chapitre-container">
+    <select name="chapitre" id="chapitre-select">
+            <option value="false" > Selectionnez votre chapitre </option>
+        {% for chapitre in chapitres %}
+            <option id={{ chapitre.id}} value={{ chapitre.id}}> chapitre  {{ chapitre.id}} {{ chapitre.nom}} </option>
+        {% endfor %}
+    </select>
+</div>
+        <div class='items'>
+        <i class="fas fa-chevron-left btn-remove" ></i>
+        <i class="fas fa-chevron-right btn-next"></i>
+        {% if pages[0].imgnom == null %}
+   <a href="index.php?content=manga&mangaId={{manga.id}}"> <img class='img' src="images/{{manga.imgnom}}"/> </a>
+        {% else %}
+        <img class='img-reader' src=images/Page/{{ pages[number].imgnom }}>
+        </div>
+       {% endif %}
+        <!--
+       <p> {{number}}</p>
+
+        
+   <a href="index.php?content=manga&mangaId={{manga.id}}&action=like"> Likes </a>
+   <a href="index.php?content=manga&mangaId={{manga.id}}&action=dislike"> Disikes </a>
+   </div> -->
+    <!--
+   {% if sessionId is defined and sessionId == mangaUserId %}
+
+        <a href='index.php?action=addTome&mangaId=".$manga['id']."'> Ajouter un Tome </a>
+    {% endif %}
+   <a href="index.php?content=tome&mangaId=<?=$manga['id']?>">Acceder aux tomes</a>
+   -->
+
+
+  </body>
+  </html>
+  {% endblock %}
+

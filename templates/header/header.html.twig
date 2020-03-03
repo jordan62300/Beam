@@ -1,0 +1,29 @@
+
+<head>
+{% block head %}
+<link rel="stylesheet" href="templates/styles/header.css">
+<link rel="stylesheet" href="templates/style.css">
+ {% endblock  %}
+</head>
+<body>
+{% block nav %}
+<div class="color-bg-nav">
+    <nav class="nav">
+        <ul class="menu">
+            <!--
+            <div class="logo">
+                <img alt="image" src="https://via.placeholder.com/150" width=80% />
+            </div>
+            -->
+            <li><a class="menu-item" href="index.php"><span class="current">L'Eclipse</span></a></li>
+            <li><a class="menu-item" href="index.php?content=arene">Classement</a></li>
+            <li><a class="menu-item" href="index.php">Profil</a></li>
+        </ul>
+         <ul class="menuSide">
+         <li><a class="menu-item" href="index.php?action=addManga"><span class="publier" > Publier </span> </a></li>
+         </ul>
+    </nav>
+</div>
+     {% endblock  %}
+    {% block content %}
+    {% endblock  %}

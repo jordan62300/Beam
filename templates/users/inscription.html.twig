@@ -1,0 +1,58 @@
+{% extends headerLayout %}
+
+
+{% block head %}
+<head>
+{{ parent() }}
+ <link rel="stylesheet" href="templates/styles/form.css">
+</head>
+{% endblock %}
+{% block nav %}
+<body>
+{{ parent() }}
+{% endblock %}
+{% block content %}
+
+    <h1 class="text-center title">Inscription </h1>
+    <div class="container">
+        <form class="mangaForm" action="" method="post">
+            <div class="item-group">
+                <label for="prenom">prenom</label>
+                <input type="text" name="prenom">
+            </div>
+
+            <div class="item-group">
+                <label for="nom">nom</label>
+                <input type="text" name="nom">
+            </div>
+
+            <div class="item-group">
+                <label for="email">email</label>
+                <input type="email" name="email">
+            </div>
+
+            <div class="item-group">
+                <label for="telephone">telephone</label>
+                <input type="number" name="telephone">
+            </div>
+
+            <div class="item-group">
+                <label for="utilisateur">utilisateur</label>
+                <input type="text" name="utilisateur">
+            </div>
+
+            <div class="item-group">
+                <label for="password">mot de passe</label>
+                <input type="password" name="password">
+            </div>
+
+            <div class="item-group">
+                <label for="password2">confirmer le mot de passe</label>
+                <input type="password" name="password2">
+            </div>
+
+            <input type="SUBMIT" value="Envoyer" name="SendInscription" class="button">
+    </form>
+   </div>
+</body>
+{% endblock %}

@@ -1,0 +1,55 @@
+
+{% extends headerLayout %}
+
+
+{% block head %}
+<head>
+{{ parent() }}
+<link rel="stylesheet" href="templates/styles/arene.css">
+</head>
+{% endblock %}
+{% block nav %}
+<body>
+{{ parent() }}
+{% endblock %}
+{% block content %}
+    <h1 class="title">{{ name }}</h1>
+    <div class="container">
+        <div class="content-items">
+            <div class="items">
+                <img src="https://via.placeholder.com/150x300" alt="manga">
+            </div>
+            <div class="items">
+                <img src="https://via.placeholder.com/150x300" alt="manga">
+            </div>
+            <div class="items">
+                <img src="https://via.placeholder.com/150x300" alt="manga">
+            </div>
+            <div class="items">
+                <img src="https://via.placeholder.com/150x300" alt="manga">
+            </div>
+            <div class="items">
+               <a href="inscription.php"> <img src="https://via.placeholder.com/150x300" alt="manga"> </a>
+            </div>
+            <div class="items">
+                <img src="https://via.placeholder.com/150x300" alt="manga">
+            </div>
+            <div class="items">
+                <img src="https://via.placeholder.com/150x300" alt="manga">
+            </div>
+            <div class="items">
+                <img class="img" src="https://via.placeholder.com/150x800" alt="manga">
+            </div>
+             <div class="items">
+                <img class="img" src="https://via.placeholder.com/150x800" alt="manga">
+            </div>
+            {% for manga in mangas %}
+            <div class='items'>
+           <a href='index.php?content=manga&mangaId={{manga.id}}'> <img class='img' src='images/accueil/{{ manga.imgnom }}' /> </a>
+          </div>
+          {% endfor %}
+            
+        </div>
+    </div>
+</body>
+ {% endblock %}

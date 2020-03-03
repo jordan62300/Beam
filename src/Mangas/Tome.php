@@ -6,31 +6,17 @@ use MangaManager\TomeManager;
 
 class Tome extends TomeManager {
     private $nom;
-    private $imgnom;
-    private $taille;
-    private $imgtype;
-    private $imgdescription;
-    private $images;
+    private $description;
  
-    public function __construct(String $nom = null ,String $imgnom = null, String $taille = null, $imgtype=null , $imgdescription = null , $images= null){
+    public function __construct(String $nom = null , String $description = null){
      $this->nom = $nom;
-     $this->imgnom = $imgnom;
-     $this->taille = $taille;
-     $this->$imgtype = $imgtype;
-     $this->$imgdescription = $imgdescription;
-     $this->images = $images;
+     $this->description = $description;
      parent::__construct();
  }
 
- public function addTome($nom,$imgnom,$taille,$imgtype,$imgdescription,$images){
+ public function addTome($nom,$description){
     $mangaId = $_GET['mangaId'];
-    $image =  addslashes($images);
-    $target = "images/Tome/".basename($imgnom);
-    var_dump($target);
-    $this->addTomeToDatabase($nom,$imgnom,$taille,$imgtype,$imgdescription,$images,$mangaId);
-    if(move_uploaded_file($images,$target)) {
-        echo "yes";
-    }
+    $this->addTomeToDatabase($nom,$description,$mangaId);
 }
 
 function dd(...$vars) {
@@ -49,7 +35,7 @@ public function getTomeByMangaId(){
 
 public function getTomeJoinByMangaId(){
     $mangaId = $_GET['mangaId'];
-    $tomes = $this->getTomeJoinWithMangaIdInBDD($mangaId);
+    $tomes = $this->getTomesJoinWithMangaIdInBDD($mangaId);
     return $tomes;
 }
 }

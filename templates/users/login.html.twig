@@ -1,0 +1,33 @@
+{% extends headerLayout %}
+
+
+{% block head %}
+<head>
+{{ parent() }}
+ <link rel="stylesheet" href="templates/styles/form.css">
+</head>
+{% endblock %}
+{% block nav %}
+<body>
+{{ parent() }}
+{% endblock %}
+{% block content %}
+
+    <h1 class="text-center title">Connexion </h1>
+    <div class="container">
+        <form class="mangaForm"  action="" method="post">
+
+            <div class="item-group">
+                <label for="utilisateur">Utilisateur</label>
+                <input type="text" name="utilisateur">
+            </div>
+
+            <div class="item-group">
+                <label for="password">Mot de passe</label>
+                <input type="password" name="password">
+            </div>
+
+            <input class="btn-submit" type="SUBMIT" value="Envoyer" name="SendLogin" class="button">        </form>
+   </div>
+</body>
+{% endblock %}

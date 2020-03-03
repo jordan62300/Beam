@@ -18,10 +18,11 @@ class MangaManager extends Connexion_BDD{
 
 
 
-    public function addMangasToDatabase($imgnom,$imgtaille,$imgtype,$imgdescription,$images,$userid) {
+    public function addMangasToDatabase($nommanga,$imgnom,$imgtaille,$imgtype,$imgdescription,$images,$userid) {
       $pdo = $this->getPDO();
-      $req = $pdo->prepare("INSERT INTO mangas (imgnom,imgtaille,imgtype,imgdescription,images,user_id) VALUES (?,?,?,?,?,?)");
+      $req = $pdo->prepare("INSERT INTO mangas (nommanga,imgnom,imgtaille,imgtype,imgdescription,images,user_id) VALUES (?,?,?,?,?,?,?)");
       $req->execute([
+        $nommanga,
         $imgnom,
         $imgtaille,
         $imgtype,
@@ -44,6 +45,13 @@ class MangaManager extends Connexion_BDD{
       $req = $pdo->query("SELECT * FROM mangas WHERE id = '$id' ");
       $res = $req->fetch();
       return $res;
+    }
+
+    public function getUserIdByMangaIdInBDD($id) {
+      $pdo = $this->getPDO();
+      $req = $pdo->query("SELECT user_id FROM mangas WHERE id = '$id' ");
+      $res = $req->fetch();
+      return $res['user_id'];
     }
 
     public function getMangasByUser($userId) {

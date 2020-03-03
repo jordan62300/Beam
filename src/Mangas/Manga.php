@@ -5,13 +5,15 @@ namespace Mangas;
 use MangaManager\MangaManager;
 
 class Manga extends MangaManager {
+   private $nommanga;
    private $nom;
    private $taille;
    private $imgtype;
    private $imgdescription;
    private $images;
 
-   public function __construct(String $nom = null, String $taille = null, $imgtype=null , $imgdescription = null , $images= null){
+   public function __construct(String $nommanga = null ,String $nom = null, String $taille = null, $imgtype=null , $imgdescription = null , $images= null){
+    $this->$nommanga = $nommanga;
     $this->nom = $nom;
     $this->taille = $taille;
     $this->$imgtype = $imgtype;
@@ -20,26 +22,20 @@ class Manga extends MangaManager {
     parent::__construct();
 }
 
-public function addManga($nom,$taille,$imgtype,$imgdescription,$images){
+public function addManga($nommanga,$nom,$taille,$imgtype,$imgdescription,$images){
     $userid = $_SESSION['id'];
     $image =  addslashes($images);
     $target = "images/".basename($nom);
     var_dump($target);
-    $this->addMangasToDatabase($nom,$taille,$imgtype,$imgdescription,$images,$userid);
+    $this->addMangasToDatabase($nommanga,$nom,$taille,$imgtype,$imgdescription,$images,$userid);
     if(move_uploaded_file($images,$target)) {
         echo "yes";
     }
 }
 
-public function displayMangas(){
+public function getMangaByLike(){
     $mangas =  $this->getAllMangasClassedByLikes();
-      foreach($mangas as $manga){
-          echo "
-          <div class='items'>
-           <a href='index.php?content=manga&mangaId=".$manga->id."'> <img class='img' src='images/".$manga->imgnom."' /> </a>
-          </div>
-         " ;
-      }
+    return $mangas;
   }
 
 
@@ -78,6 +74,12 @@ public function getMangaById(){
   $id = $_GET['mangaId'];
   $mangas =  $this->getMangaByIdInBDD($id);
   return $mangas;
+}
+
+public function getUserIdByMangaId() {
+  $id = $_GET['mangaId'];
+  $userId = $this->getUserIdByMangaIdInBDD($id);
+  return $userId;
 }
 
 

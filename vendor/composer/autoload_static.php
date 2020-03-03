@@ -6,6 +6,11 @@ namespace Composer\Autoload;
 
 class ComposerStaticInit1af6281b4936e0e0c10e92a090a27d15
 {
+    public static $files = array (
+        '320cde22f66dd4f5d3fd621d3e88b98f' => __DIR__ . '/..' . '/symfony/polyfill-ctype/bootstrap.php',
+        '0e6d7bf4a5811bfa5cf40c5ccd6fae6a' => __DIR__ . '/..' . '/symfony/polyfill-mbstring/bootstrap.php',
+    );
+
     public static $prefixLengthsPsr4 = array (
         'V' => 
         array (
@@ -14,6 +19,15 @@ class ComposerStaticInit1af6281b4936e0e0c10e92a090a27d15
         'U' => 
         array (
             'UserAppBDD\\' => 11,
+        ),
+        'T' => 
+        array (
+            'Twig\\' => 5,
+        ),
+        'S' => 
+        array (
+            'Symfony\\Polyfill\\Mbstring\\' => 26,
+            'Symfony\\Polyfill\\Ctype\\' => 23,
         ),
         'M' => 
         array (
@@ -43,6 +57,18 @@ class ComposerStaticInit1af6281b4936e0e0c10e92a090a27d15
         array (
             0 => __DIR__ . '/../..' . '/models/UserAppBDD',
         ),
+        'Twig\\' => 
+        array (
+            0 => __DIR__ . '/..' . '/twig/twig/src',
+        ),
+        'Symfony\\Polyfill\\Mbstring\\' => 
+        array (
+            0 => __DIR__ . '/..' . '/symfony/polyfill-mbstring',
+        ),
+        'Symfony\\Polyfill\\Ctype\\' => 
+        array (
+            0 => __DIR__ . '/..' . '/symfony/polyfill-ctype',
+        ),
         'Manga\\' => 
         array (
             0 => __DIR__ . '/../..' . '/src/Mangas',
@@ -69,38 +95,12 @@ class ComposerStaticInit1af6281b4936e0e0c10e92a090a27d15
         0 => __DIR__ . '/../..' . '/src',
     );
 
-    public static $classMap = array (
-        'Access\\Connexion' => __DIR__ . '/../..' . '/src/Access/Connexion.php',
-        'Access\\Deconnexion' => __DIR__ . '/../..' . '/src/Access/Deconnexion.php',
-        'Access\\Inscription' => __DIR__ . '/../..' . '/src/Access/Inscription.php',
-        'BDD\\Connexion_BDD' => __DIR__ . '/../..' . '/models/BDD/Connexion_BDD.php',
-        'Form\\Form' => __DIR__ . '/../..' . '/src/Form/Form.php',
-        'Form\\FormInscription' => __DIR__ . '/../..' . '/src/Form/FormInscription.php',
-        'Form\\FormLogin' => __DIR__ . '/../..' . '/src/Form/FormLogin.php',
-        'Form\\FormManga' => __DIR__ . '/../..' . '/src/Form/FormManga.php',
-        'Form\\FormPage' => __DIR__ . '/../..' . '/src/Form/FormPage.php',
-        'Form\\FormTome' => __DIR__ . '/../..' . '/src/Form/FormTome.php',
-        'MangaManager\\MangaManager' => __DIR__ . '/../..' . '/models/Manga/MangaManager.php',
-        'MangaManager\\PageManager' => __DIR__ . '/../..' . '/models/Manga/PageManager.php',
-        'MangaManager\\TomeManager' => __DIR__ . '/../..' . '/models/Manga/TomeManager.php',
-        'Mangas\\Dislike' => __DIR__ . '/../..' . '/src/Mangas/Dislike.php',
-        'Mangas\\Like' => __DIR__ . '/../..' . '/src/Mangas/Like.php',
-        'Mangas\\Manga' => __DIR__ . '/../..' . '/src/Mangas/Manga.php',
-        'Mangas\\Page' => __DIR__ . '/../..' . '/src/Mangas/Pages.php',
-        'Mangas\\Tome' => __DIR__ . '/../..' . '/src/Mangas/Tome.php',
-        'UserAppBDD\\ConnexionManager' => __DIR__ . '/../..' . '/models/UserAppBDD/ConnexionManager.php',
-        'UserAppBDD\\InscriptionManager' => __DIR__ . '/../..' . '/models/UserAppBDD/InscriptionManager.php',
-        'Vote\\DislikeManager' => __DIR__ . '/../..' . '/models/Vote/DislikeManager.php',
-        'Vote\\LikeManager' => __DIR__ . '/../..' . '/models/Vote/LikeManager.php',
-    );
-
     public static function getInitializer(ClassLoader $loader)
     {
         return \Closure::bind(function () use ($loader) {
             $loader->prefixLengthsPsr4 = ComposerStaticInit1af6281b4936e0e0c10e92a090a27d15::$prefixLengthsPsr4;
             $loader->prefixDirsPsr4 = ComposerStaticInit1af6281b4936e0e0c10e92a090a27d15::$prefixDirsPsr4;
             $loader->fallbackDirsPsr4 = ComposerStaticInit1af6281b4936e0e0c10e92a090a27d15::$fallbackDirsPsr4;
-            $loader->classMap = ComposerStaticInit1af6281b4936e0e0c10e92a090a27d15::$classMap;
 
         }, null, ClassLoader::class);
     }

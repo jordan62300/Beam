@@ -18,6 +18,7 @@
            "MangaManager\\":"models/Manga"
         }
     },
-    "require": {}
+    "require": {
+        "twig/twig": "^3.0"
+    }
 }
-   

@@ -8,6 +8,9 @@ $baseDir = dirname($vendorDir);
 return array(
     'Vote\\' => array($baseDir . '/models/Vote'),
     'UserAppBDD\\' => array($baseDir . '/models/UserAppBDD'),
+    'Twig\\' => array($vendorDir . '/twig/twig/src'),
+    'Symfony\\Polyfill\\Mbstring\\' => array($vendorDir . '/symfony/polyfill-mbstring'),
+    'Symfony\\Polyfill\\Ctype\\' => array($vendorDir . '/symfony/polyfill-ctype'),
     'Manga\\' => array($baseDir . '/src/Mangas'),
     'MangaManager\\' => array($baseDir . '/models/Manga'),
     'Form\\' => array($baseDir . '/src/Form'),

@@ -6,26 +6,4 @@ $vendorDir = dirname(dirname(__FILE__));
 $baseDir = dirname($vendorDir);
 
 return array(
-    'Access\\Connexion' => $baseDir . '/src/Access/Connexion.php',
-    'Access\\Deconnexion' => $baseDir . '/src/Access/Deconnexion.php',
-    'Access\\Inscription' => $baseDir . '/src/Access/Inscription.php',
-    'BDD\\Connexion_BDD' => $baseDir . '/models/BDD/Connexion_BDD.php',
-    'Form\\Form' => $baseDir . '/src/Form/Form.php',
-    'Form\\FormInscription' => $baseDir . '/src/Form/FormInscription.php',
-    'Form\\FormLogin' => $baseDir . '/src/Form/FormLogin.php',
-    'Form\\FormManga' => $baseDir . '/src/Form/FormManga.php',
-    'Form\\FormPage' => $baseDir . '/src/Form/FormPage.php',
-    'Form\\FormTome' => $baseDir . '/src/Form/FormTome.php',
-    'MangaManager\\MangaManager' => $baseDir . '/models/Manga/MangaManager.php',
-    'MangaManager\\PageManager' => $baseDir . '/models/Manga/PageManager.php',
-    'MangaManager\\TomeManager' => $baseDir . '/models/Manga/TomeManager.php',
-    'Mangas\\Dislike' => $baseDir . '/src/Mangas/Dislike.php',
-    'Mangas\\Like' => $baseDir . '/src/Mangas/Like.php',
-    'Mangas\\Manga' => $baseDir . '/src/Mangas/Manga.php',
-    'Mangas\\Page' => $baseDir . '/src/Mangas/Pages.php',
-    'Mangas\\Tome' => $baseDir . '/src/Mangas/Tome.php',
-    'UserAppBDD\\ConnexionManager' => $baseDir . '/models/UserAppBDD/ConnexionManager.php',
-    'UserAppBDD\\InscriptionManager' => $baseDir . '/models/UserAppBDD/InscriptionManager.php',
-    'Vote\\DislikeManager' => $baseDir . '/models/Vote/DislikeManager.php',
-    'Vote\\LikeManager' => $baseDir . '/models/Vote/LikeManager.php',
 );
