@@ -1,0 +1,27 @@
+<head>
+	{% block head %}
+
+		<link rel="stylesheet" href="templates/styles/headerDeux.css">
+		<link rel="stylesheet" href="templates/style.css">
+		<script src="../public/js/navbar.js" defer></script>
+	{% endblock  %}
+</head>
+<body>
+	{% block nav %}
+	<nav>
+		<div class="logo-container">
+			<img src="logo.png">
+		</div>
+		<div class="side-menu-container">
+			<ul>
+				<li><a href="#">Classement</a></li>
+				<li><a href="#">Profil</a></li>
+				<li><a href="#">Regle</a></li>
+				<li><a href="#">Atelier</a></li>
+				<img class="profil" src="profil.png" >
+			</ul>
+		</div>
+	</nav>
+	{% endblock  %}
+	{% block content %}
+	{% endblock  %}

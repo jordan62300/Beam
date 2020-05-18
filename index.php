@@ -82,7 +82,7 @@ if(isset($_SESSION['id']) && $_SESSION['id'] != null){
 } else {
 }
 */
-$headerLayout = './header/header.html.twig';
+$headerLayout = './header/headerDeux.html.twig';
 
 // Recupere l'id du tome actuel
 
@@ -241,7 +241,7 @@ echo $twig->render('content/test.html.twig', [
         ]);
 }   else {
 
-echo $twig->render('content/accueil.html.twig', [       // Page accueil
+echo $twig->render('content/accueilDeux.html.twig', [       // Page accueil
     'name' => 'Fabien' ,
     'mangas' => $mangas ,
     'headerLayout' => $headerLayout
