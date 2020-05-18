@@ -11,7 +11,8 @@ class MangaManager extends Connexion_BDD{
     
     public function getAllMangas() {
       $pdo =  $this->getPDO();
-      $req =  $pdo->query("SELECT * FROM mangas");
+      $req =  $pdo->prepare("SELECT * FROM mangas");
+      $req->execute();
       $res = $req->fetchAll(PDO::FETCH_OBJ);
       return $res;
     }
@@ -42,28 +43,35 @@ class MangaManager extends Connexion_BDD{
 
     public function getMangaByIdInBDD($id) {
       $pdo = $this->getPDO();
-      $req = $pdo->query("SELECT * FROM mangas WHERE id = '$id' ");
+      $req = $pdo->prepare("SELECT * FROM mangas WHERE id = :id ");
+      $req->bindParam(':id', $id, PDO::PARAM_INT);
+      $req->execute();
       $res = $req->fetch();
       return $res;
     }
 
     public function getUserIdByMangaIdInBDD($id) {
       $pdo = $this->getPDO();
-      $req = $pdo->query("SELECT user_id FROM mangas WHERE id = '$id' ");
+      $req = $pdo->prepare("SELECT user_id FROM mangas WHERE id = :id ");
+      $req->bindParam(':id', $id, PDO::PARAM_INT);
+      $req->execute();
       $res = $req->fetch();
       return $res['user_id'];
     }
 
     public function getMangasByUser($userId) {
       $pdo = $this->getPDO();
-      $req = $pdo->query(" SELECT * FROM mangas WHERE mangas.user_id = '$userId'");
+      $req = $pdo->prepare(" SELECT * FROM mangas WHERE mangas.user_id = :userId");
+      $req->bindParam(':userId', $userId, PDO::PARAM_INT);
+      $req->execute();
       $res = $req->fetchall(PDO::FETCH_OBJ);
       return $res;
     } 
 
     public function getAllMangasClassedByLikes() {
       $pdo =  $this->getPDO();
-      $req =  $pdo->query("SELECT * FROM mangas ORDER BY likes DESC");
+      $req =  $pdo->prepare("SELECT * FROM mangas ORDER BY likes DESC");
+      $req->execute();
       $res = $req->fetchAll(PDO::FETCH_OBJ);
       return $res;
     }

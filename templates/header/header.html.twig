@@ -1,29 +1,60 @@
-
 <head>
-{% block head %}
-<link rel="stylesheet" href="templates/styles/header.css">
-<link rel="stylesheet" href="templates/style.css">
- {% endblock  %}
+	{% block head %}
+		<link type="text/css" rel="stylesheet" href="templates/styles/materialize.min.css" media="screen,projection"/>
+
+		<link rel="stylesheet" href="templates/styles/header.css">
+		<link rel="stylesheet" href="templates/style.css">
+		<script type="text/javascript" src="public/js/materialize.min.js" defer></script>
+		<script src="../public/js/navbar.js" defer></script>
+	{% endblock  %}
 </head>
 <body>
-{% block nav %}
-<div class="color-bg-nav">
-    <nav class="nav">
-        <ul class="menu">
-            <!--
-            <div class="logo">
-                <img alt="image" src="https://via.placeholder.com/150" width=80% />
-            </div>
-            -->
-            <li><a class="menu-item" href="index.php"><span class="current">L'Eclipse</span></a></li>
-            <li><a class="menu-item" href="index.php?content=arene">Classement</a></li>
-            <li><a class="menu-item" href="index.php">Profil</a></li>
-        </ul>
-         <ul class="menuSide">
-         <li><a class="menu-item" href="index.php?action=addManga"><span class="publier" > Publier </span> </a></li>
-         </ul>
-    </nav>
-</div>
-     {% endblock  %}
-    {% block content %}
-    {% endblock  %}
+	{% block nav %}
+		<div class="ban">
+
+			<div class="color-bg-nav">
+				<nav class="nav">
+					<ul
+						class="menu">
+						<!--
+						            <div class="logo">
+						                <img alt="image" src="https://via.placeholder.com/150" width=80% />
+						            </div>
+						            -->
+						<li>
+							<a class="menu-item" href="index.php">
+								<span class="current">L'Eclipse</span>
+							</a>
+						</li>
+						<li>
+							<a class="menu-item" href="index.php?content=classement">Classement</a>
+						</li>
+						<li>
+							<a class="menu-item" href="index.php?content=profil">Profil</a>
+						</li>
+						<li>
+							<a class="menu-item" href="index.php">Atelier</a>
+						</li>
+					</ul>
+
+					<ul class="menuSide">
+						<div class="nav-wrapper">
+							<form>
+								<div class="input-field">
+									<input placeholder="recherche..." id="search" type="search" required>
+									<label class="label-icon" for="search">
+										<i class="material-icons">search</i>
+									</label>
+									<i class="material-icons">close</i>
+								</div>
+							</form>
+
+						</div>
+						<img class="img-profil" src="dossierAJeter/profilnaruto.jpg">
+
+					</ul>
+				</nav>
+			</div>
+		</div>
+		{% endblock  %}
+		{% block content %}{% endblock  %}

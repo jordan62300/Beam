@@ -42,8 +42,10 @@ function dd(...$vars) {
 }
 
 public function getPageByTomeId(){
+    if(isset($_GET['tomeId'])) {
     $tomeId = $_GET['tomeId'];
     $pages = $this->getPageByTomeIdInBDD($tomeId);
     return $pages;
+    }
 }
 }

@@ -10,12 +10,13 @@
         "psr-4": {
             "": "src",
            "BDD\\":"models/BDD",
-           "Manga\\":"src/Mangas",
+           "Mangas\\":"src/Mangas",
            "Form\\": "src/Form",
            "Access\\":"src/Access",
            "UserAppBDD\\":"models/UserAppBDD",
            "Vote\\":"models/Vote",
-           "MangaManager\\":"models/Manga"
+           "MangaManager\\":"models/Manga",
+           "Securite\\":"src/Securite"
         }
     },
     "require": {

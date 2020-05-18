@@ -1,0 +1,407 @@
+{% extends headerLayout %}
+
+{% block head %}
+
+	<!DOCTYPE html>
+	<html lang="en">
+		<head>
+			<meta charset="UTF-8">
+			<meta name="viewport" content="width=device-width, initial-scale=1.0">
+			<title>Document</title>
+			<link href="templates/styles/classement.css" rel="stylesheet">
+			<link rel="stylesheet" href="public/fontawesome/css/all.css">
+
+			{{ parent() }}
+
+		</head>
+	{% endblock  %}
+	{% block menu %}
+		<div class="header">
+			{{ parent() }}
+		{% endblock %}
+		{% block content %}
+			<div class="header">
+				<div class="classement-description">
+					<h1 class="title-description">
+						La place du meilleur est au sommet
+					</h1>
+					<p class="paragraphe-description">Le classement est actualisé tous les 21 jours. Nous classons les mangas en fonction du taux de lecture est du nombre  de like distribués par les lecteurs.</p>
+					<p class="paragraphe-description">
+						Ce sont seulement les votes de la première semaine après que le manga ait été posté qui sont comptabilisé.
+					</p>
+					<p class="paragraphe-description">Bonne chance a tous .</p>
+
+					<div class="nav-wrapper search-wrap">
+						<form>
+							<div class="input-field yes ">
+								<input placeholder="recherche ton manga..." class="search" type="search" required>
+								<label class="label-icon" for="search">
+									<i class="material-icons loupe">search</i>
+								</label>
+
+							</div>
+						</form>
+
+					</div>
+
+				</div>
+			</div>
+            <div class="eee" />
+			<div class="classement-container">
+				<div class="classement-list">
+
+					<div class="classement-item">
+						<p>Rang</p>
+						<p>Nom</p>
+						<p class="rang3">Grade</p>
+						<p>Lecteurs</p>
+						<p>Auteur</p>
+
+					</div>
+					<div class="items premier">
+						<p class="rang-info ">1
+						</p>
+						<div class="titre-info">
+							<img src="images/accueil/naruto.jpg">
+							<p>Naruto</p>
+						</div>
+                        <div class="grade-info">
+							<img src="logojordan.png"/>
+						</div>
+						
+						<p class="lecteur-info">
+							33 00 000</p>
+                        <div class="auteur-info" />
+						    <img  src="logojordan.png"/>
+                        </div>
+					</div>
+                    <div class="items">
+						<p class="rang-info">2
+						</p>
+						<div class="titre-info">
+							<img src="https://media.senscritique.com/media/000009639422/source_big/Diamond_is_Unbreakable_Jo_Jo_s_Bizarre_Adventure_saga_4.jpg">
+							<p>jojo bizzare adventure</p>
+						</div>
+                        <div class="grade-info">
+							<img src="logojordan.png"/>
+						</div>
+						
+						<p class="lecteur-info">
+							33 00 000</p>
+                        <div class="auteur-info" />
+						    <img  src="logojordan.png"/>
+                        </div>
+					</div>
+                    <div class="items">
+						<p class="rang-info">3
+
+						</p>
+						<div class="titre-info">
+							<img src="https://www.manga-news.com/public/images/vols/one-piece-82-glenat.jpg">
+							<p>One Piece</p>
+						</div>
+                        <div class="grade-info">
+							<img src="logojordan.png"/>
+						</div>
+						
+						<p class="lecteur-info">
+							33 00 000</p>
+                        <div class="auteur-info" />
+						    <img  src="logojordan.png"/>
+                        </div>
+					</div>
+                    <div class="items">
+						<p class="rang-info">4
+						</p>
+						<div class="titre-info">
+							<img src="https://media.senscritique.com/media/000017702937/source_big/My_Hero_Academia.jpg">
+							<p>My Hero academia</p>
+						</div>
+                        <div class="grade-info">
+							<img src="logojordan.png"/>
+						</div>
+						
+						<p class="lecteur-info">
+							33 00 000</p>
+                        <div class="auteur-info" />
+						    <img  src="logojordan.png"/>
+                        </div>
+					</div>
+                    <div class="items">
+						<p class="rang-info">5
+						</p>
+						<div class="titre-info">
+							<img src="images/accueil/naruto.jpg">
+							<p>Naruto</p>
+						</div>
+                        <div class="grade-info">
+							<img src="logojordan.png"/>
+						</div>
+						
+						<p class="lecteur-info">
+							33 00 000</p>
+                        <div class="auteur-info" />
+						    <img  src="logojordan.png"/>
+                        </div>
+					</div>
+                    <div class="items">
+						<p class="rang-info">6
+						</p>
+						<div class="titre-info">
+							<img src="https://media.senscritique.com/media/000009639422/source_big/Diamond_is_Unbreakable_Jo_Jo_s_Bizarre_Adventure_saga_4.jpg">
+							<p>jojo bizzare adventure</p>
+						</div>
+                        <div class="grade-info">
+							<img src="logojordan.png"/>
+						</div>
+						
+						<p class="lecteur-info">
+							33 00 000</p>
+                        <div class="auteur-info" />
+						    <img  src="logojordan.png"/>
+                        </div>
+					</div>
+                    <div class="items">
+						<p class="rang-info">7
+						</p>
+						<div class="titre-info">
+							<img src="https://www.manga-news.com/public/images/vols/one-piece-82-glenat.jpg">
+							<p>One Piece</p>
+						</div>
+                        <div class="grade-info">
+							<img src="logojordan.png"/>
+						</div>
+						
+						<p class="lecteur-info">
+							33 00 000</p>
+                        <div class="auteur-info" />
+						    <img  src="logojordan.png"/>
+                        </div>
+					</div>
+                    <div class="items">
+						<p class="rang-info">8
+						</p>
+						<div class="titre-info">
+							<img src="https://media.senscritique.com/media/000017702937/source_big/My_Hero_Academia.jpg">
+							<p>My Hero academia</p>
+						</div>
+                        <div class="grade-info">
+							<img src="logojordan.png"/>
+						</div>
+						
+						<p class="lecteur-info">
+							33 00 000</p>
+                        <div class="auteur-info" />
+						    <img  src="logojordan.png"/>
+                        </div>
+					</div>
+                    <div class="items">
+						<p class="rang-info">9
+						</p>
+						<div class="titre-info">
+							<img src="images/accueil/naruto.jpg">
+							<p>Naruto</p>
+						</div>
+                        <div class="grade-info">
+							<img src="logojordan.png"/>
+						</div>
+						
+						<p class="lecteur-info">
+							33 00 000</p>
+                        <div class="auteur-info" />
+						    <img  src="logojordan.png"/>
+                        </div>
+					</div>
+                    <div class="items blue dix">
+						<p class="rang-info">10
+						</p>
+						<div class="titre-info">
+							<img src="https://media.senscritique.com/media/000009639422/source_big/Diamond_is_Unbreakable_Jo_Jo_s_Bizarre_Adventure_saga_4.jpg">
+							<p>jojo bizzare adventure</p>
+						</div>
+                        <div class="grade-info">
+							<img src="logojordan.png"/>
+						</div>
+						
+						<p class="lecteur-info">
+							33 00 000</p>
+                        <div class="auteur-info" />
+						    <img  src="logojordan.png"/>
+                        </div>
+					</div>
+                    <div class="items blue">
+						<p class="rang-info">11
+						</p>
+						<div class="titre-info">
+							<img src="https://www.manga-news.com/public/images/vols/one-piece-82-glenat.jpg">
+							<p>One Piece</p>
+						</div>
+                        <div class="grade-info">
+							<img src="logojordan.png"/>
+						</div>
+						
+						<p class="lecteur-info">
+							33 00 000</p>
+                        <div class="auteur-info" />
+						    <img  src="logojordan.png"/>
+                        </div>
+					</div>
+                    <div class="items blue">
+						<p class="rang-info">12
+						</p>
+						<div class="titre-info">
+							<img src="https://media.senscritique.com/media/000017702937/source_big/My_Hero_Academia.jpg">
+							<p>My Hero academia</p>
+						</div>
+                        <div class="grade-info">
+							<img src="logojordan.png"/>
+						</div>
+						
+						<p class="lecteur-info">
+							33 00 000</p>
+                        <div class="auteur-info" />
+						    <img  src="logojordan.png"/>
+                        </div>
+					</div>
+                    <div class="items blue">
+						<p class="rang-info">13
+						</p>
+						<div class="titre-info">
+							<img src="images/accueil/naruto.jpg">
+							<p>Naruto</p>
+						</div>
+                        <div class="grade-info">
+							<img src="logojordan.png"/>
+						</div>
+						
+						<p class="lecteur-info">
+							33 00 000</p>
+                        <div class="auteur-info" />
+						    <img  src="logojordan.png"/>
+                        </div>
+					</div>
+                    <div class="items blue">
+						<p class="rang-info">14
+						</p>
+						<div class="titre-info">
+							<img src="https://media.senscritique.com/media/000009639422/source_big/Diamond_is_Unbreakable_Jo_Jo_s_Bizarre_Adventure_saga_4.jpg">
+							<p>jojo bizzare adventure</p>
+						</div>
+                        <div class="grade-info">
+							<img src="logojordan.png"/>
+						</div>
+						
+						<p class="lecteur-info">
+							33 00 000</p>
+                        <div class="auteur-info" />
+						    <img  src="logojordan.png"/>
+                        </div>
+					</div>
+                    <div class="items blue">
+						<p class="rang-info">15
+						</p>
+						<div class="titre-info">
+							<img src="https://www.manga-news.com/public/images/vols/one-piece-82-glenat.jpg">
+							<p>One Piece</p>
+						</div>
+                        <div class="grade-info">
+							<img src="logojordan.png"/>
+						</div>
+						
+						<p class="lecteur-info">
+							33 00 000</p>
+                        <div class="auteur-info" />
+						    <img  src="logojordan.png"/>
+                        </div>
+					</div>
+                    <div class="items blue">
+						<p class="rang-info">16
+						</p>
+						<div class="titre-info">
+							<img src="https://media.senscritique.com/media/000017702937/source_big/My_Hero_Academia.jpg">
+							<p>My Hero academia</p>
+						</div>
+                        <div class="grade-info">
+							<img src="logojordan.png"/>
+						</div>
+						
+						<p class="lecteur-info">
+							33 00 000</p>
+                        <div class="auteur-info" />
+						    <img  src="logojordan.png"/>
+                        </div>
+					</div>
+                    <div class="items blue">
+						<p class="rang-info">17
+						</p>
+						<div class="titre-info">
+							<img src="images/accueil/naruto.jpg">
+							<p>Naruto</p>
+						</div>
+                        <div class="grade-info">
+							<img src="logojordan.png"/>
+						</div>
+						
+						<p class="lecteur-info">
+							33 00 000</p>
+                        <div class="auteur-info" />
+						    <img  src="logojordan.png"/>
+                        </div>
+					</div>
+                    <div class="items blue">
+						<p class="rang-info">18
+						</p>
+						<div class="titre-info">
+							<img src="https://media.senscritique.com/media/000009639422/source_big/Diamond_is_Unbreakable_Jo_Jo_s_Bizarre_Adventure_saga_4.jpg">
+							<p>jojo bizzare adventure</p>
+						</div>
+                        <div class="grade-info">
+							<img src="logojordan.png"/>
+						</div>
+						
+						<p class="lecteur-info">
+							33 00 000</p>
+                        <div class="auteur-info" />
+						    <img  src="logojordan.png"/>
+                        </div>
+					</div>
+                    <div class="items blue">
+						<p class="rang-info">19
+						</p>
+						<div class="titre-info">
+							<img src="https://www.manga-news.com/public/images/vols/one-piece-82-glenat.jpg">
+							<p>One Piece</p>
+						</div>
+                        <div class="grade-info">
+							<img src="logojordan.png"/>
+						</div>
+						
+						<p class="lecteur-info">
+							33 00 000</p>
+                        <div class="auteur-info" />
+						    <img  src="logojordan.png"/>
+                        </div>
+					</div>
+                    <div class="items blue">
+						<p class="rang-info">20
+						</p>
+						<div class="titre-info">
+							<img src="https://media.senscritique.com/media/000017702937/source_big/My_Hero_Academia.jpg">
+							<p>My Hero academia</p>
+						</div>
+                        <div class="grade-info">
+							<img src="logojordan.png"/>
+						</div>
+						
+						<p class="lecteur-info">
+							33 00 000</p>
+                        <div class="auteur-info" />
+						    <img  src="logojordan.png"/>
+                        </div>
+					</div>
+				</div>
+			</div>
+            </div>
+        
+</body></html>
+		{% endblock %}

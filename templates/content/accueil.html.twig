@@ -2,106 +2,140 @@
 
 {% block head %}
 
-<!DOCTYPE html>
-<html lang="en">
-<head>
-    <meta charset="UTF-8">
-    <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Document</title>
-    <link rel="stylesheet" type="text/css" href="slick-1.8.1/slick/theme/slick-theme.css"/>
-    <link rel="stylesheet" type="text/css" href="slick-1.8.1/slick/slick.css"/>
-    <link href="templates/styles/accueil.css" rel="stylesheet">
-    <link rel="stylesheet" href="public/fontawesome/css/all.css">
-   <script type="text/javascript" src='https://cdnjs.cloudflare.com/ajax/libs/jquery/3.4.1/jquery.slim.min.js' defer ></script>
-   <script type="text/javascript" src="slick-1.8.1/slick/slick.min.js" defer></script>
-    <script type="text/javascript" src="public/js/slider.js" defer></script>
-    {{ parent() }}
+	<!DOCTYPE html>
+	<html lang="en">
+		<head>
+			<meta charset="UTF-8">
+			<meta name="viewport" content="width=device-width, initial-scale=1.0">
+			
+			<title>Document</title>
+			<link rel="stylesheet" type="text/css" href="slick-1.8.1/slick/theme/slick-theme.css"/>
+			<link rel="stylesheet" type="text/css" href="slick-1.8.1/slick/slick.css"/>
+			<link href="templates/styles/accueil.css" rel="stylesheet">
+			<link rel="stylesheet" href="public/fontawesome/css/all.css">
+			<script type="text/javascript" src='https://cdnjs.cloudflare.com/ajax/libs/jquery/3.4.1/jquery.slim.min.js' defer></script>
+			<script type="text/javascript" src="slick-1.8.1/slick/slick.min.js" defer></script>
+			<script type="text/javascript" src="public/js/slider.js" defer></script>
+			{{ parent() }}
 
-</head>
-{% endblock  %}
-{% block menu %}
-<div class="header">
-{{ parent() }}
-{% endblock %}
-{% block content %}
-<div id="background-container">
-  <iframe class="video" allow="autoplay" allowfullscreen="allowfullscreen"
-        mozallowfullscreen="mozallowfullscreen" 
-        msallowfullscreen="msallowfullscreen" 
-        oallowfullscreen="oallowfullscreen" 
-        webkitallowfullscreen="webkitallowfullscreen"
-        frameBorder="0"
-src="https://www.youtube.com/embed/5YmJj0onPkI?rel=0&controls=1&showinfo=0&autoplay=1&loop=1">
-</iframe>
-</div>
-</div>
-<div class="slider">
-  <h2 class="subtitle1">TOP 10</h2>
-  <i class="fas fa-chevron-left prev prev1"></i>
-  <i class="fas fa-chevron-right next next1"></i>
-  <div class="center items-slide">
-  {% for manga in mangas %}
-    <a href="index.php?content=read&mangaId={{manga.id}}&tomeId=1"><img class="imageSlide" src="images/accueil/{{manga.imgnom}}"/></a>
-  {% endfor %}
-    
-  </div>
-</div>
+		</head>
+	{% endblock  %}
+	{% block menu %}
+		<div class="header">
+			{{ parent() }}
+		{% endblock %}
+		{% block content %}
+			<div id="background-container">
+				<img src="header.png">
+				<h1 class="titre-header">TOP 4</h1>
+				<p class="description-header">Dans un monde où 80 % de la population mondiale possède des super-pouvoirs, ici nommés "Alters" (個性, Kosei?), n'importe qui peut devenir un héros ou, s'il le souhaite, un criminel.</p>
+				<div class="play-header">
+					<p class="">
+						<i class="fas fa-play"></i>
+						Play</p>
+				</div>
+				<div class="info-header">
+					<p class="">
+						Plus d'infos</p>
+				</div>
+			</div>
+		</div>
+		<div class="slider">
+			<h2 class="subtitle1">Top 10</h2>
+			<i class="fas fa-chevron-left prev prev1"></i>
+			<i class="fas fa-chevron-right next next1"></i>
+			<div class="center items-slide">
+				{% for manga in mangas %}
+					<a href="index.php?content=read&mangaId={{manga.id}}&tomeId=1"><img class="imageSlide" src="images/accueil/{{manga.imgnom}}"/></a>
+				{% endfor %}
+			</div>
+		</div>
 
-  <div class="event">
-    <div class="event-items">
-      <div class="event-item"> <img class="event-image " src="images/accueil/mangaka.jpg" alt=""> <h2 class="event-title">Devenir mangaka</h2></div>
-      <div class="event-item"> <img class="event-image img-disabled" src="images/accueil/animation.jpg" alt=""> <h2 class="event-title">Animation</h2> </div>
-      <div class="event-item"> <img class="event-image img-disabled" src="images/accueil/france.jpg" alt="">  <h2 class="event-title">Pour la france </h2></div>
-  </div>
-    
-  </div>
 
-  <div class="slider">
-    <h2 class="subtitle1">Nouveautés</h2>
-    <i class="fas fa-chevron-left prev prev2"></i>
-    <i class="fas fa-chevron-right next next2"></i>
-    <div class="center items-slide2">
-      <div><img class="imageSlide" src="https://www.bedetheque.com/media/Couvertures/Couv_259085.jpg"/></div>
-      <div><img class="imageSlide" src="https://media.senscritique.com/media/000009639422/source_big/Diamond_is_Unbreakable_Jo_Jo_s_Bizarre_Adventure_saga_4.jpg"/></div>
-      <div><img class="imageSlide" src="https://www.bedetheque.com/media/Couvertures/Couv_109746.jpg"/></div>
-      <div><img class="imageSlide" src="https://media.senscritique.com/media/000005365669/source_big/Tokyo_Ghoul.jpg"/></div>
-      <div><img class="imageSlide" src="https://www.bdfugue.com/media/catalog/product/cache/1/image/400x/17f82f742ffe127f42dca9de82fb58b1/9/7/9782759509492_1_75.jpg"/></div>
-         <div><img class="imageSlide" src="https://media.senscritique.com/media/000017702937/source_big/My_Hero_Academia.jpg"/></div>
-      <div><img class="imageSlide" src="https://media.senscritique.com/media/000009639422/source_big/Diamond_is_Unbreakable_Jo_Jo_s_Bizarre_Adventure_saga_4.jpg"/></div>
-      <div><img class="imageSlide" src="https://www.manga-news.com/public/images/vols/meckaz-3.jpg"/></div>
-      <div><img class="imageSlide" src="https://i.pinimg.com/originals/fd/47/20/fd4720ee283f91a625e47fd444e5d6ef.jpg"/></div>
-      <div><img class="imageSlide" src="https://www.bdfugue.com/media/catalog/product/cache/1/image/400x/17f82f742ffe127f42dca9de82fb58b1/9/7/9782759509492_1_75.jpg"/></div>
-         <div><img class="imageSlide" src="https://media.senscritique.com/media/000018276088/source_big/Berserk.jpg"/></div>
-      <div><img class="imageSlide" src="https://www.manga-news.com/public/images/vols/one-piece-82-glenat.jpg"/></div>
-      <div><img class="imageSlide" src="https://vignette.wikia.nocookie.net/sword-art-online/images/d/dd/Couverture_fr_Sword_Art_Online_-_Aincrad_Tome_001.jpg/revision/latest/scale-to-width-down/340?cb=20161005161035&path-prefix=fr"/></div>
-      <div><img class="imageSlide" src="https://i.pinimg.com/originals/85/b8/f1/85b8f19461573ad8a07a379c8960a211.jpg"/></div>
-      <div><img class="imageSlide" src="https://media.senscritique.com/media/000017702937/source_big/My_Hero_Academia.jpg"/></div>
-    </div>
-  </div>
+		<div class="slider">
+			<h2 class="subtitle2">Reprendre la Lecture</h2>
+			<i class="fas fa-chevron-left prev prev2"></i>
+			<i class="fas fa-chevron-right next next2"></i>
+			<div class="center-2 items-slide2">
+				<div><img class="imageSlide" src="https://www.bedetheque.com/media/Couvertures/Couv_259085.jpg"/></div>
+				<div><img class="imageSlide" src="https://media.senscritique.com/media/000009639422/source_big/Diamond_is_Unbreakable_Jo_Jo_s_Bizarre_Adventure_saga_4.jpg"/></div>
+				<div><img class="imageSlide" src="https://www.bedetheque.com/media/Couvertures/Couv_109746.jpg"/></div>
+			</div>
+		</div>
 
-  <div class="slider">
-    <h2 class="subtitle1">Tendances</h2>
-    <i class="fas fa-chevron-left prev prev3"></i>
-    <i class="fas fa-chevron-right next next3"></i>
-    <div class="center items-slide3">
-      <div><img class="imageSlide" src="https://www.bedetheque.com/media/Couvertures/Couv_259085.jpg"/></div>
-      <div><img class="imageSlide" src="https://media.senscritique.com/media/000009639422/source_big/Diamond_is_Unbreakable_Jo_Jo_s_Bizarre_Adventure_saga_4.jpg"/></div>
-      <div><img class="imageSlide" src="https://www.bedetheque.com/media/Couvertures/Couv_109746.jpg"/></div>
-      <div><img class="imageSlide" src="https://media.senscritique.com/media/000005365669/source_big/Tokyo_Ghoul.jpg"/></div>
-      <div><img class="imageSlide" src="https://www.bdfugue.com/media/catalog/product/cache/1/image/400x/17f82f742ffe127f42dca9de82fb58b1/9/7/9782759509492_1_75.jpg"/></div>
-         <div><img class="imageSlide" src="https://media.senscritique.com/media/000017702937/source_big/My_Hero_Academia.jpg"/></div>
-      <div><img class="imageSlide" src="https://media.senscritique.com/media/000009639422/source_big/Diamond_is_Unbreakable_Jo_Jo_s_Bizarre_Adventure_saga_4.jpg"/></div>
-      <div><img class="imageSlide" src="https://www.manga-news.com/public/images/vols/meckaz-3.jpg"/></div>
-      <div><img class="imageSlide" src="https://i.pinimg.com/originals/fd/47/20/fd4720ee283f91a625e47fd444e5d6ef.jpg"/></div>
-      <div><img class="imageSlide" src="https://www.bdfugue.com/media/catalog/product/cache/1/image/400x/17f82f742ffe127f42dca9de82fb58b1/9/7/9782759509492_1_75.jpg"/></div>
-         <div><img class="imageSlide" src="https://media.senscritique.com/media/000018276088/source_big/Berserk.jpg"/></div>
-      <div><img class="imageSlide" src="https://www.manga-news.com/public/images/vols/one-piece-82-glenat.jpg"/></div>
-      <div><img class="imageSlide" src="https://vignette.wikia.nocookie.net/sword-art-online/images/d/dd/Couverture_fr_Sword_Art_Online_-_Aincrad_Tome_001.jpg/revision/latest/scale-to-width-down/340?cb=20161005161035&path-prefix=fr"/></div>
-      <div><img class="imageSlide" src="https://i.pinimg.com/originals/85/b8/f1/85b8f19461573ad8a07a379c8960a211.jpg"/></div>
-      <div><img class="imageSlide" src="https://media.senscritique.com/media/000017702937/source_big/My_Hero_Academia.jpg"/></div>
-    </div>
-  </div>
+		<div class="event">
+      		<h2 class="titre-evenement">Evenements</h2>
+			<div class="event-items">
+				<div class="event-item">
+					<img class="event-image " src="public/asset/event1.png" alt="">
+					<h2 class="event-title">Devenir <span class="maincolor">mangaka</span></h2>
+				</div>
+				<div class="event-item">
+					<img class="event-image img-disabled" src="public/asset/event2.png" alt="">
+					<h2 class="event-title">Créer une <span class="maincolor">bd</span></h2>
+				</div>
+				<div class="event-item">
+					<img class="event-image img-disabled" src="public/asset/event3.png" alt="">
+					<h2 class="event-title">Locked</h2>
+				</div>
+				<div class="event-item">
+					<img class="event-image " src="public/asset/event4.png" alt="">
+					<h2 class="event-title">Locked</h2>
+				</div>
+				<div class="event-item">
+					<img class="event-image " src="public/asset/event5.png" alt="">
+					<h2 class="event-title">Locked</h2>
+				</div>
+				<div class="event-item">
+					<img class="event-image " src="public/asset/event3.png" alt="">
+					<h2 class="event-title">Locked</h2>
+				</div>
+			</div>
+		</div>
+		<div class="slider">
+			<h2 class="subtitle3">Tendances</h2>
+			<i class="fas fa-chevron-left prev prev3"></i>
+			<i class="fas fa-chevron-right next next3"></i>
+			<div class="center items-slide3">
+				<div><img class="imageSlide" src="https://www.bedetheque.com/media/Couvertures/Couv_259085.jpg"/></div>
+				<div><img class="imageSlide" src="https://media.senscritique.com/media/000009639422/source_big/Diamond_is_Unbreakable_Jo_Jo_s_Bizarre_Adventure_saga_4.jpg"/></div>
+				<div><img class="imageSlide" src="https://www.bedetheque.com/media/Couvertures/Couv_109746.jpg"/></div>
+				<div><img class="imageSlide" src="https://media.senscritique.com/media/000005365669/source_big/Tokyo_Ghoul.jpg"/></div>
+				<div><img class="imageSlide" src="https://www.bdfugue.com/media/catalog/product/cache/1/image/400x/17f82f742ffe127f42dca9de82fb58b1/9/7/9782759509492_1_75.jpg"/></div>
+				<div><img class="imageSlide" src="https://media.senscritique.com/media/000017702937/source_big/My_Hero_Academia.jpg"/></div>
+				<div><img class="imageSlide" src="https://media.senscritique.com/media/000009639422/source_big/Diamond_is_Unbreakable_Jo_Jo_s_Bizarre_Adventure_saga_4.jpg"/></div>
+				<div><img class="imageSlide" src="https://www.manga-news.com/public/images/vols/meckaz-3.jpg"/></div>
+				<div><img class="imageSlide" src="https://i.pinimg.com/originals/fd/47/20/fd4720ee283f91a625e47fd444e5d6ef.jpg"/></div>
+				<div><img class="imageSlide" src="https://www.bdfugue.com/media/catalog/product/cache/1/image/400x/17f82f742ffe127f42dca9de82fb58b1/9/7/9782759509492_1_75.jpg"/></div>
+				<div><img class="imageSlide" src="https://media.senscritique.com/media/000018276088/source_big/Berserk.jpg"/></div>
+				<div><img class="imageSlide" src="https://www.manga-news.com/public/images/vols/one-piece-82-glenat.jpg"/></div>
+				<div><img class="imageSlide" src="https://vignette.wikia.nocookie.net/sword-art-online/images/d/dd/Couverture_fr_Sword_Art_Online_-_Aincrad_Tome_001.jpg/revision/latest/scale-to-width-down/340?cb=20161005161035&path-prefix=fr"/></div>
+				<div><img class="imageSlide" src="https://i.pinimg.com/originals/85/b8/f1/85b8f19461573ad8a07a379c8960a211.jpg"/></div>
+				<div><img class="imageSlide" src="https://media.senscritique.com/media/000017702937/source_big/My_Hero_Academia.jpg"/></div>
+			</div>
+		</div>
 
-  </body>
-</html>
-{% endblock %} 
+		<div class="slider">
+			<h2 class="subtitle4">Action</h2>
+			<i class="fas fa-chevron-left prev prev4"></i>
+			<i class="fas fa-chevron-right next next4"></i>
+			<div class="center items-slide4">
+				<div><img class="imageSlide" src="https://www.bedetheque.com/media/Couvertures/Couv_259085.jpg"/></div>
+				<div><img class="imageSlide" src="https://media.senscritique.com/media/000009639422/source_big/Diamond_is_Unbreakable_Jo_Jo_s_Bizarre_Adventure_saga_4.jpg"/></div>
+				<div><img class="imageSlide" src="https://www.bedetheque.com/media/Couvertures/Couv_109746.jpg"/></div>
+				<div><img class="imageSlide" src="https://media.senscritique.com/media/000005365669/source_big/Tokyo_Ghoul.jpg"/></div>
+				<div><img class="imageSlide" src="https://www.bdfugue.com/media/catalog/product/cache/1/image/400x/17f82f742ffe127f42dca9de82fb58b1/9/7/9782759509492_1_75.jpg"/></div>
+				<div><img class="imageSlide" src="https://media.senscritique.com/media/000017702937/source_big/My_Hero_Academia.jpg"/></div>
+				<div><img class="imageSlide" src="https://media.senscritique.com/media/000009639422/source_big/Diamond_is_Unbreakable_Jo_Jo_s_Bizarre_Adventure_saga_4.jpg"/></div>
+				<div><img class="imageSlide" src="https://www.manga-news.com/public/images/vols/meckaz-3.jpg"/></div>
+				<div><img class="imageSlide" src="https://i.pinimg.com/originals/fd/47/20/fd4720ee283f91a625e47fd444e5d6ef.jpg"/></div>
+				<div><img class="imageSlide" src="https://www.bdfugue.com/media/catalog/product/cache/1/image/400x/17f82f742ffe127f42dca9de82fb58b1/9/7/9782759509492_1_75.jpg"/></div>
+				<div><img class="imageSlide" src="https://media.senscritique.com/media/000018276088/source_big/Berserk.jpg"/></div>
+				<div><img class="imageSlide" src="https://www.manga-news.com/public/images/vols/one-piece-82-glenat.jpg"/></div>
+				<div><img class="imageSlide" src="https://vignette.wikia.nocookie.net/sword-art-online/images/d/dd/Couverture_fr_Sword_Art_Online_-_Aincrad_Tome_001.jpg/revision/latest/scale-to-width-down/340?cb=20161005161035&path-prefix=fr"/></div>
+				<div><img class="imageSlide" src="https://i.pinimg.com/originals/85/b8/f1/85b8f19461573ad8a07a379c8960a211.jpg"/></div>
+				<div><img class="imageSlide" src="https://media.senscritique.com/media/000017702937/source_big/My_Hero_Academia.jpg"/></div>
+			</div>
+		</div>
+	</html>
+</body></html>{% endblock %}

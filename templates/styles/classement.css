@@ -1,0 +1,248 @@
+@font-face {
+    font-family: "MontserratLight";
+    src: url('/public/Montserrat/Montserrat-Light.ttf');
+  }
+
+  @font-face {
+    font-family: "Montserrat";
+    src: url('/public/Montserrat/Montserrat-Medium.ttf');
+  }
+
+  @font-face {
+    font-family: "Dubai Regular";
+    font-style: normal;
+    font-weight: normal;
+    src: local("Dubai Regular"), url("/public/dubai-webfont/Dubai-Regular.woff") format("woff");
+  }
+  
+  @font-face {
+    font-family: "Dubai Light";
+    font-style: normal;
+    font-weight: normal;
+    src: local("Dubai Light"), url("/public/dubai-webfont/Dubai-Light.woff") format("woff");
+  }
+  
+  @font-face {
+    font-family: "Dubai Medium";
+    font-style: normal;
+    font-weight: normal;
+    src: local("Dubai Medium"), url("/public/dubai-webfont/Dubai-Medium.woff") format("woff");
+  }
+  
+  @font-face {
+    font-family: "Dubai Bold";
+    font-style: normal;
+    font-weight: normal;
+    src: local("Dubai Bold"), url("/public/dubai-webfont/Dubai-Bold.woff") format("woff");
+  }
+
+
+  /* header classement */
+
+.header{
+    width: 100%;
+    height: 75%;
+    background: #000413;
+}
+
+.classement-description{
+  
+    width: 60%;
+    height: 30%;
+    position: relative;
+    top: 33%;
+    left:10%;
+   
+}
+
+.title-description{
+    font-size: 36px;
+    font-weight: bold;
+    color: #BA3908;
+    font-family: "Montserrat";
+    margin-bottom: 3%;
+}
+
+.paragraphe-description{
+    font-size: 14px;
+    color:#FFFFFF;
+   
+    text-shadow: 1px 1px 2px #F6F2F6 ;
+
+    font-family: "MontserratLight";
+}
+
+.search-wrap{
+    margin-top: 5%;
+}
+
+.yes {
+    border-bottom: none !important;
+    width: 50%;
+    margin-top: 50%;
+}
+
+ .yes input[type=search]:not(.browser-default) {
+background-color: white !important;
+height: 30% !important;
+}
+
+.search::placeholder {
+   color: #767676;
+   font-family: "MontserratLight";
+   font-size: 18px;
+}
+
+.loupe {
+    color: #BA3908;
+    margin-top: 50%;
+}
+
+/* Classement */
+.eee{
+    height: 200vh ;
+    background: #171717;
+}
+
+
+
+.classement-container{
+    background: #171717;
+    width: 100%;
+    height: 50vh;
+}
+
+.classement-list{
+    width: 75%;
+    height: 300px;
+    margin: 0 auto;
+    position: relative;
+    top: -15%;
+}
+
+.classement-item{
+    display: flex;
+    width: 100%;
+    height: 10%;
+    justify-content: center;
+}
+
+.classement-item p {
+    font-family: "Dubai Bold";
+    font-size: 17px;
+    color: #FFFFFF
+}
+
+.classement-item p:nth-child(1) {
+    flex-grow: 2;
+}
+
+.classement-item p:nth-child(2) {
+    flex-grow: 4;
+}
+
+.classement-item p:nth-child(3) {
+    flex-grow: 2;
+}
+
+.classement-item p:nth-child(4) {
+    flex-grow: 10;
+}
+
+.classement-item p:nth-child(5) {
+    flex-grow: 1;
+}
+
+.classement-item p.items {
+   color : white;
+   justify-self: end;
+}
+
+.items.premier {
+    background-color:  #6A2C68;
+    
+  }
+
+.items{
+    margin-top: 1%;
+    display: flex;
+    width: 100%;
+    background-color: #512050;
+    height: 72px;
+    border-radius: 5px;
+    font-family: "Dubai Bold";
+    font-size: 21px;
+    color: #FFFFFF;
+    align-items: center;
+}
+
+.items.blue{
+    margin-top: 1%;
+    display: flex;
+    width: 100%;
+    background-color: #1E3548 !important;
+    height: 72px;
+    border-radius: 5px;
+    font-family: "Dubai Bold";
+    font-size: 21px;
+    color: #FFFFFF;
+    align-items: center;
+}
+
+.items.blue.dix{
+background-color: #2C4D6A !important;
+}
+
+
+
+
+.items .rang-info {
+    flex-grow: 2;
+    width: 2%;
+    margin-left: 0.5%;
+   
+}
+
+.items .titre-info {
+    display: flex;
+    flex-grow: 2;
+    width: 11%;
+}
+
+.items .titre-info img {
+   width: 39px;
+   height: 60px;
+   border-radius: 10px;
+}
+
+.items .titre-info p {
+    margin-left: 2px;
+ }
+
+.items .grade-info {
+    flex-grow: 2;
+    width: 3%
+}
+
+.items .grade-info img {
+    width: 52px;
+    height: 52px;
+    border-radius: 142px;
+}
+
+.items .lecteur-info {
+    flex-grow: 10;
+    width: 5%
+}
+
+.items .auteur-info {
+    flex-grow: 1;
+}
+
+.items .auteur-info img {
+    width: 52px;
+    height: 52px;
+    border-radius: 142px;
+}
+
+

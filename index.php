@@ -1,12 +1,8 @@
 
 <?php
-include('utils.php');
-require 'vendor/autoload.php';
+ include('utils.php');
 
-$_SESSION['id'] = null;
-
-session_start();
-
+// require 'vendor/autoload.php';
 
 use Mangas\Manga;
 use Mangas\Like;
@@ -14,11 +10,20 @@ use Mangas\Dislike;
 use Mangas\Page;
 use Mangas\Tome;
 use Access\Deconnexion;
+use Access\Connexion;
 use Form\FormInscription;
 use Form\FormLogin;
 use Form\FormManga;
 use Form\FormPage;
 use Form\FormTome;
+
+
+$_SESSION['id'] = null;
+
+session_start();
+
+
+
 
 
 $mangaInstance = new Manga();
@@ -28,6 +33,7 @@ $pageInstance = new Page();
 $tomeInstance = new Tome();
 $deconnexion = new Deconnexion();
 $inscriptionInstance = new FormInscription();
+$connexionInstance = new Connexion();
 $loginInstance = new FormLogin();
 $formmangaInstance = new FormManga();
 $formPageInstance = new FormPage();
@@ -36,11 +42,18 @@ $formTomeInstance = new FormTome();
 
 
 
-$mangaInstance->connexion();
+
 
 $loader = new \Twig\Loader\FilesystemLoader('templates');       // Chemin qui pointe vers le dossier templates pour twig
-$twig = new \Twig\Environment($loader);                         // twig instance
+$twig = new \Twig\Environment($loader, [
+    'debug' => true,
+]);                         // twig instance
+$twig->addExtension(new \Twig\Extension\DebugExtension());
+$twig->addGlobal("session", $_SESSION);
 
+
+
+$mangaInstance->connexion();
 $tomes = $tomeInstance->getTomeJoinByMangaId();    // Recupere le userId
 $chapitres = $tomeInstance->getTomeByMangaId();     // Recupere les chapitres par l'id du manga
 $pages = $pageInstance->getPageByTomeId();          // recupere la page en fonction du tome id
@@ -51,8 +64,10 @@ $userId = $mangaInstance->getUserIdByMangaId();
 
 
 // Envoie du formulaire de connexion 
-if($_SERVER['REQUEST_METHOD'] === 'POST' && isset($_POST['SendLogin'])) {   
-    $loginInstance->onSubmit($_POST['utilisateur'],$_POST['password']);
+if($_SERVER['REQUEST_METHOD'] === 'POST' && isset($_POST['SendLogin'])) { 
+    $utilisateur =   htmlspecialchars($_POST['utilisateur'], ENT_QUOTES);
+    $password = htmlspecialchars($_POST['password'], ENT_QUOTES);
+    $loginInstance->onSubmit($utilisateur,$password);
 }
 
 
@@ -72,37 +87,52 @@ $headerLayout = './header/header.html.twig';
 // Recupere l'id du tome actuel
 
 if(isset($_GET['tomeId'])){
-    $tomesId = $_GET['tomeId'];
+    $tomesId = htmlspecialchars($_GET['tomeId']);
 }
 
 // Recupere un Post ajax pour le changement d'id du champ select
 
-if(isset($_POST['tomeSelectedId'])) {             
-    $id = $_POST['tomeSelectedId'];                 
+if(isset($_POST['tomeSelectedId'])) {   
+       
+    $id = htmlspecialchars($_POST['tomeSelectedId'], ENT_QUOTES);                  
 }
 
 // Recupere un Post ajax pour le changement de l'index de page
 
 if(isset($_POST['incresedNumber'])) {               
-    $number =   $_POST['incresedNumber'];
+    $number =   htmlspecialchars($_POST['incresedNumber'], ENT_QUOTES);
 } else if(isset($_POST['decreasedNumber'])) {
-    $number =   $_POST['decreasedNumber'];
+    $number =   htmlspecialchars($_POST['decreasedNumber'], ENT_QUOTES);
 }
 
  // Recupere les likes et dislikes et verifie si deja vote
 
 if(isset($_GET['action']) && $_GET['action'] == 'like') {          
-    $likes->checkHasLikedOnce($_GET['mangaId'] , $_SESSION['id']);
+    $likes->checkHasLikedOnce(htmlspecialchars($_GET['mangaId']) , $_SESSION['id']);
 } else if(isset($_GET['action']) && $_GET['action'] == 'dislike') {
-    $dislike->checkHasDislikedOnce($_GET['mangaId'] , $_SESSION['id']);
+    $dislike->checkHasDislikedOnce(htmlspecialchars($_GET['mangaId']) , $_SESSION['id']);
 }
 
 // Inscription
 
 if($_SERVER['REQUEST_METHOD'] === 'POST') {
     if(isset($_POST['SendInscription']) && isset($_POST['prenom']) && isset($_POST['nom']) && isset($_POST['email']) && isset($_POST['telephone'])&& isset($_POST['utilisateur'])&& isset($_POST['password'])&& isset($_POST['password2']))
-    $inscriptionInstance->onSubmit($_POST['prenom'],$_POST['nom'],$_POST['email'],$_POST['telephone'],$_POST['utilisateur'],$_POST['password'],$_POST['password2']);
+  $prenom =  htmlspecialchars($_POST['prenom'], ENT_QUOTES);
+  $nom =  htmlspecialchars($_POST['nom'], ENT_QUOTES);
+  $email =  htmlspecialchars($_POST['email'], ENT_QUOTES);
+  $telephone =  htmlspecialchars($_POST['telephone'], ENT_QUOTES);
+  $utilisateur =  htmlspecialchars($_POST['utilisateur'], ENT_QUOTES);
+  $password =  htmlspecialchars($_POST['password'], ENT_QUOTES);
+  $password2 =  htmlspecialchars($_POST['password2'], ENT_QUOTES);
+    $inscriptionInstance->onSubmit( $prenom, $nom,$email,$telephone,$utilisateur,$password,$password2);
 }
+
+// Connexion
+
+// Session ID 
+
+$sessionId = $connexionInstance->getSessionId();
+
 
 // Deconnexion 
 
@@ -118,8 +148,9 @@ if(isset($_GET['content']) && $_GET['content'] == 'deconnexion') {
 if($_SERVER['REQUEST_METHOD'] === 'POST') { 
     if(isset($_POST['ajoutManga'])) {
 
-    $description = $_POST['description'];   
-    $formmangaInstance->onSubmit($_POST['nomdumanga'],$_FILES['fic']['name'] ,$_FILES['fic']['size'] ,$_FILES['fic']['type'] ,$description,$_FILES['fic']['tmp_name'] );
+    $description = htmlspecialchars($_POST['description'], ENT_QUOTES);  
+    $nomdumanga = htmlspecialchars($_POST['nomdumanga'], ENT_QUOTES); 
+    $formmangaInstance->onSubmit($nomdumanga,$_FILES['fic']['name'] ,$_FILES['fic']['size'] ,$_FILES['fic']['type'] ,$description,$_FILES['fic']['tmp_name'] );
     }
 }
 
@@ -128,8 +159,9 @@ if($_SERVER['REQUEST_METHOD'] === 'POST') {
 if($_SERVER['REQUEST_METHOD'] === 'POST') { 
     if(isset($_POST['ajoutTome'])) {
 
-    $description = $_POST['description'];   
-    $formTomeInstance->onSubmit($_POST['nomChapitre'],$_POST['description']);
+    $description = htmlspecialchars($_POST['description'], ENT_QUOTES);
+    $nomChapitre = htmlspecialchars($_POST['nomChapitre'], ENT_QUOTES);     
+    $formTomeInstance->onSubmit($nomChapitre,$description);
     }
 }
 
@@ -139,7 +171,7 @@ if($_SERVER['REQUEST_METHOD'] === 'POST') {
 
     if(isset($_POST['ajoutPage'])) {
 
-    $description = $_POST['description'];   
+    $description = htmlspecialchars($_POST['description'], ENT_QUOTES);
     $formPageInstance->onSubmit($_FILES['fic']['name'] ,$_FILES['fic']['size'] ,$_FILES['fic']['type'] ,$description,$_FILES['fic']['tmp_name'] );
     }
 }
@@ -158,14 +190,20 @@ echo $twig->render('content/test.html.twig', [
     'pages' => $pages,
     'number' => $number,
     'tomeId' => $tomeId,
-    'sessionId' => $_SESSION['id'],
+    'sessionId' => $sessionId,
     'mangaUserId' => $userId,
     'headerLayout' => $headerLayout
 
     ]);
 
-    //Page d'inscription    
-} else if(isset($_GET['content']) && $_GET['content'] == 'inscription') {
+     
+} else if(isset($_GET['content']) && $_GET['content'] == "classement") {   //Page de classement  
+    echo $twig->render('content/classement.html.twig', [
+        'name' => 'Jordan',
+        'headerLayout' => $headerLayout,
+        ]);
+    
+} else if(isset($_GET['content']) && $_GET['content'] == 'inscription') {   //Page d'inscription   
     echo $twig->render('users/inscription.html.twig', [
         'headerLayout' => $headerLayout,
         ]);
@@ -177,7 +215,12 @@ echo $twig->render('content/test.html.twig', [
     echo $twig->render('users/login.html.twig', [
         'headerLayout' => $headerLayout,
         ]);
-} else if(isset($_GET['action'])  && $_GET['action'] == 'addManga' && isset($_SESSION['id']) && $_SESSION['id'] != null ) { // Page ajout de manga
+} else if(isset($_GET['content']) && $_GET['content'] == 'profil') {     // Page de connexion
+    echo $twig->render('users/profil/profilprojet.html.twig', [
+        'headerLayout' => $headerLayout,
+        'name' => 'jordan'
+        ]);
+}  else if(isset($_GET['action'])  && $_GET['action'] == 'addManga' && isset($_SESSION['id']) && $_SESSION['id'] != null ) { // Page ajout de manga
     echo $twig->render('form/formulairemanga.php', [
         'headerLayout' => $headerLayout,
         ]);

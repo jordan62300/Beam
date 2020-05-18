@@ -14,10 +14,15 @@ class ConnexionManager extends Connexion_BDD{
         // Login to the app
     public function loginToApp($utilisateur,$password){
       $pdo =  $this->getPDO();
-      $req =  $pdo->query("SELECT * FROM users WHERE utilisateur = '$utilisateur' AND password='$password'");
+      $req =  $pdo->prepare("SELECT * FROM users WHERE utilisateur = :utilisateur AND password= :password");
+      $req->bindParam(':utilisateur',$utilisateur,PDO::PARAM_STR);
+      $req->bindParam(':password',$password,PDO::PARAM_STR);
+      $req->execute();
       $res = $req->fetch();
-      session_start();
+   //   session_start();
       $_SESSION['id'] = $res['id'];
       return $res;
     }
+
+    
 }

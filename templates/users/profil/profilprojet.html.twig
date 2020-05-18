@@ -1,0 +1,54 @@
+{% extends headerLayout %}
+
+
+{% block head %}
+<head>
+{{ parent() }}
+<link rel="stylesheet" href="templates/styles/profilprojet.css">
+</head>
+{% endblock %}
+{% block nav %}
+<body>
+{{ parent() }}
+{% endblock %}
+{% block content %}
+<div class="header">
+    <div class="header-container">
+        <img class="imgprofil" src="dossierAJeter/profilnaruto.jpg">
+        <p class="prenom"> Jordan Fievet </p>
+        <p class="devise"> "T'auras beau faire 2m, le poing ira au même endroit"</p>
+    </div>
+    <div class="container-switchactu">
+     <a href="#" class="switchpage actu">Fil d'actu</a>
+    </div>
+     <div class="container-switchactu">
+     <a href="#" class="switchpage actu">Fil d'actu</a>
+    </div>
+    <div class="container-switchstats">
+     <a href="#" class="switchpage stats">Mes stats</a>
+    </div>
+    <div class="container-switch container-switchprojets current">
+        <a href="#" class="switchpage projet current">Mes projets</a>
+    </div>
+</div>
+<div class="content">
+    <div class="container-img">
+        <img class='imgprojet' src="profilprojet1.png"/>
+    </div>
+    <div class="container-img">
+         <img class='imgprojet' src="profilprojet2.png"/>
+    </div>
+     <div class="container-img">
+        <img class='imgprojet' src="profilprojet1.png"/>
+    </div>
+    <div class="container-img">
+         <img class='imgprojet' src="profilprojet2.png"/>
+    </div>
+        <div class="container-img">
+         <img class='imgprojet' src="profilprojet2.png"/>
+    </div>
+    <div class="container-img">
+        <img class='imgprojet' src="add.png"/>
+    </div>
+</div>
+{% endblock %}

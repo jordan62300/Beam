@@ -47,8 +47,12 @@
             <div class='items'>
            <a href='index.php?content=manga&mangaId={{manga.id}}'> <img class='img' src='images/accueil/{{ manga.imgnom }}' /> </a>
           </div>
+          
+          
           {% endfor %}
-            
+            <pre>
+    {{ dump(session) }}
+</pre>
         </div>
     </div>
 </body>

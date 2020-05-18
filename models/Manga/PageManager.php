@@ -24,7 +24,9 @@ class PageManager extends Connexion_BDD{
 
     public function getPageByTomeIdInBDD($tomeId){
       $pdo = $this->getPDO();
-      $req = $pdo->query("SELECT * FROM pages WHERE tome_id = '$tomeId' ");
+      $req = $pdo->prepare("SELECT * FROM pages WHERE tome_id = :tomeId ");
+      $req->bindParam(':tomeId',$tomeId);
+      $req->execute();
       $res = $req->fetchAll(PDO::FETCH_OBJ);
       return $res;
     

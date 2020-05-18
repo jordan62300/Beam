@@ -4,6 +4,7 @@ namespace Mangas;
 
 use MangaManager\MangaManager;
 
+
 class Manga extends MangaManager {
    private $nommanga;
    private $nom;
@@ -71,15 +72,19 @@ public function addUrlParam($params=array()){
 }
 
 public function getMangaById(){
-  $id = $_GET['mangaId'];
+  if(isset($_GET['mangaId'])) {
+  $id = htmlspecialchars($_GET['mangaId'], ENT_QUOTES);
   $mangas =  $this->getMangaByIdInBDD($id);
   return $mangas;
+  }
 }
 
 public function getUserIdByMangaId() {
-  $id = $_GET['mangaId'];
+  if(isset($_GET['mangaId'])) {
+  $id = htmlspecialchars($_GET['mangaId'], ENT_QUOTES);
   $userId = $this->getUserIdByMangaIdInBDD($id);
   return $userId;
+  }
 }
 
 

@@ -55,14 +55,19 @@ class LikeManager extends MangaManager {
 
     public function getLikesByManga($mangaId){
         $pdo = $this->getPDO();
-        $req = $pdo->query("SELECT likes FROM mangas WHERE id ='$mangaId'");
+        $req = $pdo->prepare("SELECT likes FROM mangas WHERE id =:mangaId");
+        $req->bindParam(':mangaId',$userId,PDO::PARAM_INT);
+        $res->execute();
         $res = $req->fetch();
         return $res['likes'];
     }
 
     public function hasVoted($mangaId,$userId) {
         $pdo = $this->getPDO();
-        $req = $pdo->query("SELECT voted FROM votes_mangas_users WHERE manga_id ='$mangaId' AND user_id = '$userId' ");
+        $req = $pdo->prepare("SELECT voted FROM votes_mangas_users WHERE manga_id =:mangaId AND user_id = :userId ");
+        $req->bindParam(':mangaId',$mangaId,PDO::PARAM_INT);
+        $req->bindParam(':userId',$userId,PDO::PARAM_INT);
+        $res->execute();
         $res = $req->fetch();
         return $res['voted'];
     }

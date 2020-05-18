@@ -27,7 +27,9 @@ class InscriptionManager extends Connexion_BDD{
 
     public function checkDoubleUsername($username){
       $pdo = $this->getPDO();
-      $req = $pdo->query("SELECT utilisateur FROM users WHERE utilisateur = '$username' ");
+      $req = $pdo->prepare("SELECT utilisateur FROM users WHERE utilisateur = :username ");
+      $req->bindParam(':username',$username,PDO::PARAM_STR);
+      $req->execute();
       $res = $req->fetch();
       return $res;
     }

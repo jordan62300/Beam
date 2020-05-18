@@ -28,14 +28,18 @@ function dd(...$vars) {
 }
 
 public function getTomeByMangaId(){
+    if(isset($_GET['mangaId'])) {
     $mangaId = $_GET['mangaId'];
     $tomes = $this->getTomeByMangaIdInBDD($mangaId);
     return $tomes;
+    }
 }
 
 public function getTomeJoinByMangaId(){
+    if(isset($_GET['mangaId'])) {
     $mangaId = $_GET['mangaId'];
     $tomes = $this->getTomesJoinWithMangaIdInBDD($mangaId);
     return $tomes;
+    }
 }
 }

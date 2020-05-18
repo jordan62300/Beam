@@ -19,14 +19,13 @@ $(document).ready(function () {
          },
          
          function(data, status) {
-             
-             console.log(data);
-             
-             $('html').html(data)
-                $('select').formSelect();
-            }).then(setTimeout(function(){
 
-            },1000));
+            var src = $(data).find('.img-reader').attr('src')
+            $('.img-reader').attr('src' , src)
+             
+      //      $('html').html(data)
+            $('select').formSelect();
+            })
         
     })
 
@@ -42,7 +41,8 @@ $(document).ready(function () {
          },
          function(data, status) {
             
-            $('html').html(data)
+            var src = $(data).find('.img-reader').attr('src')
+            $('.img-reader').attr('src' , src)
             $('select').formSelect();
         
 
