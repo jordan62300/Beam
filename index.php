@@ -203,6 +203,12 @@ echo $twig->render('content/test.html.twig', [
         'headerLayout' => $headerLayout,
         ]);
     
+} else if(isset($_GET['content']) && $_GET['content'] == "popup") {   //Page de classement  
+    echo $twig->render('content/popup.html.twig', [
+        'name' => 'Jordan',
+        'headerLayout' => $headerLayout,
+        ]);
+    
 } else if(isset($_GET['content']) && $_GET['content'] == 'inscription') {   //Page d'inscription   
     echo $twig->render('users/inscription.html.twig', [
         'headerLayout' => $headerLayout,

@@ -4,7 +4,7 @@
   }
 
   @font-face {
-    font-family: "Montserrat";
+    font-family: "MontserratMedium";
     src: url('/public/Montserrat/Montserrat-Medium.ttf');
   }
 
@@ -27,7 +27,7 @@
 
   a{
       text-decoration: none;
-      color: white;
+      color: #ffffff;
   }
 
 nav {
@@ -45,6 +45,11 @@ nav {
    display: flex;
    font-family: "Montserrat";
    font-size: 15px;
+}
+
+.side-menu-container ul li a{
+ font-family: "MontserratMedium";
+ font-size: 15px;
 }
 
 ul{

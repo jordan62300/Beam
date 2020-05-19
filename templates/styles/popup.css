@@ -29,14 +29,14 @@ body {
 
 /*  HEADER */
 .site-cache{
-    filter:brightness(100%);
-    z-index: 9999999;
+    filter:brightness(20%);
 
 }
 
 header {
     height: 615px;
     width: 100%;
+    filter:brightness(20%);
 }
 
 .header-container-img {
